@@ -26,7 +26,7 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (login()) {
-                    openMenu();
+                    openMenu(v);
                 } else {
                     onLoginFailed();
                 }
@@ -34,8 +34,13 @@ public class Login extends AppCompatActivity {
         });
     }
 
-    private void openMenu(){
-        Intent intent = new Intent(Login.this,null);
+    private void openMenu(View v){
+        String email = _emailLoginText.getText().toString();
+        String password = _passwordLoginText.getText().toString();
+
+        Intent intent = new Intent(Login.this, Menu.class);
+        intent.putExtra("user",email);
+        intent.putExtra("passwd",password);
         startActivity(intent);
     }
 
@@ -54,11 +59,11 @@ public class Login extends AppCompatActivity {
 
     }
     public void onLoginSuccess() {
-        Toast.makeText(this, "Inicio de sesion exitoso", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Inicio de sesion exitoso", Toast.LENGTH_SHORT).show();
         _signupButtonLogin.setEnabled(true);
     }
     public void onLoginFailed() {
-        Toast.makeText(this, "Falló proceso de inicio de sesión", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Falló proceso de inicio de sesión", Toast.LENGTH_SHORT).show();
         _signupButtonLogin.setEnabled(true);
     }
     public boolean validateLogin() {

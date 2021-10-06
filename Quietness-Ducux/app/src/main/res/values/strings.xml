@@ -10,4 +10,37 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="Q1">Si pudieras escoger cualquier lugar, Donde te gustaria vivir?</string>
+    <string name="Q11">Playa</string>
+    <string name="Q12">Bosque</string>
+    <string name="Q13">Montana</string>
+    <string name="Q14">Ciudad</string>
+    <string name="Q2">Con quien te siente mejor?</string>
+    <string name="Q21">Familia</string>
+    <string name="Q22">Amigos</string>
+    <string name="Q23">Mascota</string>
+    <string name="Q24">Pareja</string>
+    <string name="Q3">Con que animal te identificas mas?</string>
+    <string name="Q31">Leon</string>
+    <string name="Q32">Aguila</string>
+    <string name="Q33">Lobo</string>
+    <string name="Q34">Tiburon</string>
+    <string name="Q35">Mono</string>
+    <string name="Q4">Que actividad prefieres?</string>
+    <string name="Q41">Leer</string>
+    <string name="Q42">Audio-visuales</string>
+    <string name="Q43">Deporte</string>
+    <string name="Q44">Fiesta</string>
+    <string name="Load">Load</string>
+    <string name="TitleQuiz">Quiz</string>
+    <string name="temp">...</string>
+    <string name="Music">Music</string>
+    <string name="Sleep">Sleep</string>
+    <string name="Calendar">Calendar</string>
+    <string name="History">Stories</string>
+    <string name="app_name_menu">Menu Quietness</string>
+    <string name="back">Back</string>
+    <string name="about">About Us</string>
+    <string name="save">Save</string>
+
 </resources>

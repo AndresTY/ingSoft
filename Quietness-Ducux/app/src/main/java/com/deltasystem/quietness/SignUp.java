@@ -59,14 +59,14 @@ public class SignUp extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    signup();
+                    signup(v);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
         });
     }
-    public void signup() throws IOException {
+    public void signup(View v) throws IOException {
         if (!validate()) {
             onSignupFailed();
             return;
@@ -81,8 +81,9 @@ public class SignUp extends AppCompatActivity {
             Register register = new Register();
             genre = genero.charAt(0);
             String nombreCompleto = name+" "+lastName;
-            register.registerUserManual(nombreCompleto,user,email,password,123456);
+            register.registerUserManual(nombreCompleto,user,email,password,123456," ");
             onSignupSuccess();
+            onClickRegister(v);
         }
         _signupButton.setEnabled(false);
         String name = _nameText.getText().toString();
@@ -159,6 +160,14 @@ public class SignUp extends AppCompatActivity {
 
     public void onClickLogin(View view){
         Intent intent = new Intent(SignUp.this, Login.class);
+        startActivity(intent);
+    }
+    public void onClickRegister(View view){
+        Intent intent = new Intent(SignUp.this, Encuesta.class);
+        String email = _emailText.getText().toString();
+        String password = _passwordText.getText().toString();
+        intent.putExtra("user",email);
+        intent.putExtra("passwd",password);
         startActivity(intent);
     }
 }

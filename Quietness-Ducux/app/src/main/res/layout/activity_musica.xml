@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context=".Musica">
+
+    <Button
+        android:id="@+id/song4"
+        android:layout_width="110dp"
+        android:layout_height="103dp"
+        android:background="@android:drawable/ic_media_play"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.443"
+        app:layout_constraintStart_toEndOf="@+id/song1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.09"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <Button
+        android:id="@+id/song6"
+        android:layout_width="110dp"
+        android:layout_height="103dp"
+        android:background="@android:drawable/ic_media_play"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.443"
+        app:layout_constraintStart_toEndOf="@+id/song5"
+        app:layout_constraintTop_toBottomOf="@+id/song4"
+        app:layout_constraintVertical_bias="0.081"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <Button
+        android:id="@+id/song5"
+        android:layout_width="110dp"
+        android:layout_height="103dp"
+        android:background="@android:drawable/ic_media_play"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.222"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/song1"
+        app:layout_constraintVertical_bias="0.081"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <Button
+        android:id="@+id/song1"
+        android:layout_width="110dp"
+        android:layout_height="103dp"
+        android:background="@android:drawable/ic_media_play"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.222"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.09"
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+    <Button
+        android:id="@+id/song3"
+        android:layout_width="110dp"
+        android:layout_height="103dp"
+        android:background="@android:drawable/ic_media_play"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.443"
+        app:layout_constraintStart_toEndOf="@+id/song7"
+        app:layout_constraintTop_toBottomOf="@+id/song6"
+        app:layout_constraintVertical_bias="0.146"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <Button
+        android:id="@+id/song7"
+        android:layout_width="110dp"
+        android:layout_height="103dp"
+        android:background="@android:drawable/ic_media_play"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.222"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/song5"
+        app:layout_constraintVertical_bias="0.149"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <Button
+        android:id="@+id/song8"
+        android:layout_width="110dp"
+        android:layout_height="103dp"
+        android:layout_marginEnd="68dp"
+        android:background="@android:drawable/ic_media_play"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.785"
+        app:layout_constraintStart_toEndOf="@+id/song2"
+        app:layout_constraintTop_toBottomOf="@+id/song3"
+        app:layout_constraintVertical_bias="0.204"
+        tools:ignore="DuplicateClickableBoundsCheck,SpeakableTextPresentCheck" />
+
+    <Button
+        android:id="@+id/reset"
+        android:layout_width="78dp"
+        android:layout_height="73dp"
+        android:background="@android:drawable/ic_media_rew"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.945" />
+
+    <ImageButton
+        android:id="@+id/song2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.233"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/song7"
+        app:srcCompat="@drawable/logo_lit" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

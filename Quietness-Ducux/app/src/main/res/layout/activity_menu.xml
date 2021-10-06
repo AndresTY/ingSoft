@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Menu">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <Button
+        android:id="@+id/BtnCalendar"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/toolbar"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="72dp"
+        android:text="@string/Calendar" />
+
+    <Button
+        android:id="@+id/BtnMusic"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/BtnHistoria"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="72dp"
+        android:text="@string/Music" />
+
+    <Button
+        android:id="@+id/BtnHistoria"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/BtnSleep"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="72dp"
+        android:text="@string/History" />
+
+    <Button
+        android:id="@+id/BtnSleep"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/BtnCalendar"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="72dp"
+        android:text="@string/Sleep" />
+
+</RelativeLayout>

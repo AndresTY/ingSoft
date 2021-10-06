@@ -142,5 +142,41 @@ public class SQLRequest {
 				  }
 			}
 	}
-	 
+
+	public String[] getInfo(String _table,String _user, String _passwd) { //Show DB, does not respect SOLID `IF`
+		String info[] = new String[5];
+		String sql = String.format("SELECT * FROM %s WHERE (email=\"%s\" AND passwd=\"%s\") ",_table,_user,_passwd); //SQL statement
+		ResultSet result;
+		Connection connection = null;
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+			StrictMode.setThreadPolicy(policy);
+			connection = DriverManager.getConnection(jdbcUrl,"sql3442286","qbM8XpxegR"); //Connect to DB
+			Statement statement = connection.createStatement();
+			result = statement.executeQuery(sql);
+
+			while (result.next()) {
+				info[0] = result.getString("username");
+				info[1] = result.getString("name");
+				info[2] = result.getString("email");
+				info[3] = Integer.toString(result.getInt("phone"));
+				info[4] = result.getString("encuesta");
+			}
+			return info;
+
+		} catch (SQLException | ClassNotFoundException e) {
+			e.printStackTrace();//Report ERROR
+		}
+		finally {
+			if (connection != null) {
+				try {
+					connection.close(); // closes Connection
+				} catch (SQLException e) {
+					e.printStackTrace(); //Report ERROR
+				}
+			}
+		}
+		return null;
+	}
 }

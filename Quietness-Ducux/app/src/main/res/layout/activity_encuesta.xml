@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Encuesta">
+
+    <TextView
+        android:id="@+id/textTemp"
+        android:layout_width="171dp"
+        android:layout_height="45dp"
+        android:text="@string/TitleQuiz"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.018" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="361dp"
+        android:layout_height="534dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/Q1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Q1"
+                android:textSize="20sp" />
+
+            <RadioGroup
+                android:id="@+id/Q1RG"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RadioButton
+                    android:id="@+id/Q11"
+                    style="@android:style/Widget.Holo.CompoundButton.RadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Q11" />
+
+                <RadioButton
+                    android:id="@+id/Q12"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Q12" />
+
+                <RadioButton
+                    android:id="@+id/Q13"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Q13" />
+
+                <RadioButton
+                    android:id="@+id/Q14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Q14" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/Q2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Q2"
+                android:textSize="20sp" />
+
+            <RadioGroup
+                android:id="@+id/Q2RG"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RadioButton
+                    android:id="@+id/Q21"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Q21" />
+
+                <RadioButton
+                    android:id="@+id/Q22"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Q22" />
+
+                <RadioButton
+                    android:id="@+id/Q23"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Q23" />
+
+                <RadioButton
+                    android:id="@+id/Q24"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Q24" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/Q3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Q3"
+                android:textSize="20sp" />
+
+            <RadioGroup
+                android:id="@+id/Q3RG"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RadioButton
+                    android:id="@+id/Q31"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Q31" />
+
+                <RadioButton
+                    android:id="@+id/Q32"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Q32" />
+
+                <RadioButton
+                    android:id="@+id/Q33"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Q33" />
+
+                <RadioButton
+                    android:id="@+id/Q34"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Q34" />
+
+                <RadioButton
+                    android:id="@+id/Q35"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Q35" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/Q4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Q4"
+                android:textSize="20sp" />
+
+            <RadioGroup
+                android:id="@+id/Q4RG"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RadioButton
+                    android:id="@+id/Q41"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Q41" />
+
+                <RadioButton
+                    android:id="@+id/Q42"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Q42" />
+
+                <RadioButton
+                    android:id="@+id/Q43"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Q43" />
+
+                <RadioButton
+                    android:id="@+id/Q44"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Q43" />
+
+            </RadioGroup>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/LoadData"
+        style="@android:style/Widget.Material.Light.Button.Small"
+        android:layout_width="181dp"
+        android:layout_height="48dp"
+        android:onClick="Lo"
+        android:text="@string/Load"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textTemp"
+        app:layout_constraintVertical_bias="0.982" />
+</androidx.constraintlayout.widget.ConstraintLayout>

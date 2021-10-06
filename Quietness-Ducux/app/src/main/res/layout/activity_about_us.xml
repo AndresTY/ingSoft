@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AboutUs">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="174dp"
+        android:layout_height="47dp"
+        android:text="@string/about"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
+    <TextView
+        android:id="@+id/tv_description"
+        android:layout_width="367dp"
+        android:layout_height="569dp"
+        android:gravity="left"
+        android:maxLines="50"
+        android:padding="8dp"
+        android:text="We propose contextual convolution (CoConv) for visual recognition. CoConv is a direct replacement of the stan- dard convolution, which is the core component of convo- lutional neural networks. CoConv is implicitly equipped with the capability of incorporating contextual informa- tion while maintaining a similar number of parameters and computational cost compared to the standard convo- lution. CoConv is inspired by neuroscience studies indi- cating that (i) neurons, even from the primary visual cor- tex (V1 area), are involved in detection of contextual cues and that (ii) the activity of a visual neuron can be influ- enced by the stimuli placed entirely outside of its theoret- ical receptive field. On the one hand, we integrate Co- Conv in the widely-used residual networks and show im- proved recognition performance over baselines on the core tasks and benchmarks for visual recognition, namely image classification on the ImageNet data set and object detec- tion on the MS COCO data set. On the other hand, we in- troduce CoConv in the generator of a state-of-the-art Gen- erative Adversarial Network, showing improved generative results on CIFAR-10 and CelebA"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/back_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/back_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.049"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

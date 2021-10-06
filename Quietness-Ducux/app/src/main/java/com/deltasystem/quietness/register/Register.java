@@ -27,8 +27,8 @@ public class Register {
 	private IRegister registerApi;
 
 
-	public void registerUserManual( String name, String username, String email, String passwd, int phone) { //Register user
-		registerApi = new ManualRegisterAPI( name, username, email, passwd, phone);
+	public void registerUserManual( String name, String username, String email, String passwd, int phone,String quiz) { //Register user
+		registerApi = new ManualRegisterAPI( name, username, email, passwd, phone,quiz);
 
 		SqlR.insertUser(String.format("%s", registerApi.register())); //insert user
 	}
