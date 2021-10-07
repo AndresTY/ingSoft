@@ -34,11 +34,12 @@ public class Calendar extends AppCompatActivity {
                     intent.putExtra(CalendarContract.Events.DESCRIPTION,desc.getText().toString());
                     intent.putExtra(CalendarContract.Events.ALL_DAY,"true");
                     intent.putExtra(Intent.EXTRA_EMAIL,ble.getString("user").toString());
-                    if (intent.resolveActivity(getPackageManager())!= null){
+                    startActivity(intent);
+                    /*if (intent.resolveActivity(getPackageManager())!= null){
                         startActivity(intent);
                     }else{
                         Toast.makeText(Calendar.this,"There is no app that can support this action", Toast.LENGTH_SHORT).show();
-                    }
+                    }*/
                 }else{
                     Toast.makeText(Calendar.this, "Please fill all the fields", Toast.LENGTH_SHORT).show();
                 }
