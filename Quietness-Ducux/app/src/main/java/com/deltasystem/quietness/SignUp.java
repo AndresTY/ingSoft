@@ -81,7 +81,7 @@ public class SignUp extends AppCompatActivity {
             Register register = new Register();
             genre = genero.charAt(0);
             String nombreCompleto = name+" "+lastName;
-            register.registerUserManual(nombreCompleto,user,email,password,123456," ");
+            register.registerUserManual(nombreCompleto,user,email,password,genre," ");
             onSignupSuccess();
             onClickRegister(v);
         }

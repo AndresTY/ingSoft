@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 public class Calendar extends AppCompatActivity {
 
-    private EditText title,location,desc;
+    private EditText title,location,desc,startDate,endDate;
     private Button saveEvent;
     private Bundle ble = null;
 
@@ -26,19 +26,23 @@ public class Calendar extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(!title.getText().toString().isEmpty() && !location.getText().toString().isEmpty()
-                        && !desc.getText().toString().isEmpty()){
+                        && !desc.getText().toString().isEmpty() && !startDate.getText().toString().isEmpty() && !endDate.getText().toString().isEmpty()){
                     Intent intent = new Intent(Intent.ACTION_INSERT);
                     intent.setData(CalendarContract.Events.CONTENT_URI);
                     intent.putExtra(CalendarContract.Events.TITLE,title.getText().toString());
                     intent.putExtra(CalendarContract.Events.EVENT_LOCATION,location.getText().toString());
                     intent.putExtra(CalendarContract.Events.DESCRIPTION,desc.getText().toString());
-                    intent.putExtra(CalendarContract.Events.ALL_DAY,"true");
+                    intent.putExtra(CalendarContract.Events.DTSTART,startDate.getText().toString());
+                    intent.putExtra(CalendarContract.Events.DTEND,endDate.getText().toString());
+                    //intent.putExtra(CalendarContract.Events.ALL_DAY,"true");
                     intent.putExtra(Intent.EXTRA_EMAIL,ble.getString("user").toString());
+                    startActivity(intent);
+                    /*
                     if (intent.resolveActivity(getPackageManager())!= null){
                         startActivity(intent);
                     }else{
                         Toast.makeText(Calendar.this,"There is no app that can support this action", Toast.LENGTH_SHORT).show();
-                    }
+                    }*/
                 }else{
                     Toast.makeText(Calendar.this, "Please fill all the fields", Toast.LENGTH_SHORT).show();
                 }
@@ -50,6 +54,8 @@ public class Calendar extends AppCompatActivity {
         title = findViewById(R.id.TitleTxt);
         location = findViewById(R.id.LocationTxt);
         desc = findViewById(R.id.descriptionTxt);
+        startDate = findViewById(R.id.StartDateTxt);
+        endDate = findViewById(R.id.EndDateTxt);
         saveEvent = findViewById(R.id.save_Btn);
     }
 

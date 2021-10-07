@@ -1,6 +1,8 @@
 package com.deltasystem.quietness.login;
 import android.os.StrictMode;
 
+import com.deltasystem.quietness.Encrypt.HashPasswd;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -8,10 +10,12 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class Validador {
+	private HashPasswd hp = new HashPasswd();
 	private String jdbcUrl = "jdbc:mysql://sql3.freesqldatabase.com:3306/sql3442286";	//URGENTE: generalize connection SQL
 
 	public boolean validar(String email, String passwd) {
-		String sql = String.format("SELECT * FROM `clients` WHERE (username=\"%s\" AND passwd=\"%s\") OR (email=\"%s\" AND passwd=\"%s\")",email,passwd,email,passwd); //SQL statement
+		String password = hp.hashed(passwd,"SHA-256").toString();
+		String sql = String.format("SELECT * FROM `clients` WHERE (email=\"%s\" AND passwd=\"%s\")",email,password); //SQL statement
 		ResultSet result;
 		Connection connection = null;
 		try {

@@ -5,22 +5,22 @@ public class ManualRegisterAPI implements IRegister { //Manual register
 	private String name;
 	private String email;
 	private String passwd;
-	private int phone;
+	private char gender;
 	private String username; // M F PND
 	private String quiz;
 
 		
-	public ManualRegisterAPI(String name,String username, String email, String passwd,int phone,String quiz) { //Constructor
+	public ManualRegisterAPI(String name,String username, String email, String passwd,char gender,String quiz) { //Constructor
 
 		this.name = name;
 		this.username=username;
 		this.email = email;
 		this.passwd = passwd;
-		this.phone=phone;
+		this.gender=gender;
 		this.quiz=quiz;
 	}
 
 	public String register() { //sets the data for the SQL statement
-		return String.format("\"%s\",\"%s\",\"%s\",\"%s\",%d,\"%s\"", name,username,email,passwd,phone,quiz);
+		return String.format("\"%s\",\"%s\",\"%s\",\"%s\",\'%c\',\"%s\"", name,username,email,passwd,gender,quiz);
 	}
 }

@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.deltasystem.quietness.Encrypt.HashPasswd;
 import com.deltasystem.quietness.sql.SQLRequest;
 
 public class Profile extends AppCompatActivity {
@@ -35,7 +36,7 @@ public class Profile extends AppCompatActivity {
     }
 
     private void initializationBtn(){
-        btn_back = (Button) findViewById(R.id.button2);
+       // btn_back = (Button) findViewById(R.id.button2);
     }
 
     private void open_menu(View v){
@@ -49,10 +50,12 @@ public class Profile extends AppCompatActivity {
     }
 
     private void info(){
+        HashPasswd hp = new HashPasswd();
         String[] str = new String[5];
         bdle=this.getIntent().getExtras();
+        String password = hp.hashed(bdle.getString("passwd"),"SHA-256").toString();
         SQLRequest sql = new SQLRequest();
-        str = sql.getInfo("clients",bdle.getString("user"),bdle.getString("passwd"));
+        str = sql.getInfo("clients",bdle.getString("user"),password);
         if(str!=null) {
             userTxt.setText(str[0]);
             nameTxt.setText(str[1]);

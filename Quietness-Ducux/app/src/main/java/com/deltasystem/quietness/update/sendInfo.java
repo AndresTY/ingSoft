@@ -1,6 +1,7 @@
 package com.deltasystem.quietness.update;
 import android.os.StrictMode;
 
+import com.deltasystem.quietness.Encrypt.HashPasswd;
 import com.deltasystem.quietness.sql.SQLRequest;
 
 import java.sql.Connection;
@@ -46,7 +47,8 @@ public class sendInfo {
 	}
 
 	public void addQuiz(String email, String passwd, String quiz){
-		String sql = String.format("UPDATE clients SET encuesta=\"%s\" WHERE (email=\"%s\" AND passwd=\"%s\");",quiz,email,passwd);
+		HashPasswd hp = new HashPasswd();
+		String sql = String.format("UPDATE clients SET quiz=\"%s\" WHERE (email=\"%s\" AND passwd=\"%s\");",quiz,email,hp.hashed(passwd,"SHA-256"));
 		int result;
 		Connection connection = null;
 		try {

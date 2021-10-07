@@ -4,6 +4,7 @@ import static android.content.Context.MODE_PRIVATE;
 import android.app.Activity;
 import android.content.Context;
 
+import com.deltasystem.quietness.Encrypt.HashPasswd;
 import com.deltasystem.quietness.MainActivity;
 import com.deltasystem.quietness.apis.IRegister;
 import com.deltasystem.quietness.apis.ManualRegisterAPI;
@@ -25,10 +26,12 @@ import java.util.ArrayList;
 public class Register {
 	private SQLRequest SqlR = new SQLRequest();
 	private IRegister registerApi;
+	private HashPasswd hp = new HashPasswd();
 
 
-	public void registerUserManual( String name, String username, String email, String passwd, int phone,String quiz) { //Register user
-		registerApi = new ManualRegisterAPI( name, username, email, passwd, phone,quiz);
+	public void registerUserManual( String name, String username, String email, String passwd, char gender,String quiz) { //Register user
+		String password = hp.hashed(passwd,"SHA-256").toString();
+		registerApi = new ManualRegisterAPI( name, username, email, password, gender,quiz);
 
 		SqlR.insertUser(String.format("%s", registerApi.register())); //insert user
 	}

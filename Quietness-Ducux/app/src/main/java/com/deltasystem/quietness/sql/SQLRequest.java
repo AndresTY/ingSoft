@@ -160,8 +160,8 @@ public class SQLRequest {
 				info[0] = result.getString("username");
 				info[1] = result.getString("name");
 				info[2] = result.getString("email");
-				info[3] = Integer.toString(result.getInt("phone"));
-				info[4] = result.getString("encuesta");
+				info[3] = String.valueOf(result.getString("gender"));
+				info[4] = result.getString("quiz");
 			}
 			return info;
 
