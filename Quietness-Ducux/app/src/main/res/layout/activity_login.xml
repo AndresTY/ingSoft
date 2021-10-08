@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/backsignup"
-    tools:context=".Login">
+    tools:context=".sing_in_up.Login">
 
     <ImageView
         android:id="@+id/logo_login"

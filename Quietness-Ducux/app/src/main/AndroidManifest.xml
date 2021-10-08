@@ -12,31 +12,38 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
-            android:name=".Calendar"
+            android:name=".toolbar_items.settings"
             android:exported="true" />
         <activity
-            android:name=".Stories"
+            android:name=".sing_in_up.TermOfService"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.popup" />
+        <activity
+            android:name=".activity_menu.CalendarView"
             android:exported="true" />
         <activity
-            android:name=".AboutUs"
+            android:name=".activity_menu.Stories"
             android:exported="true" />
         <activity
-            android:name=".Profile"
+            android:name=".toolbar_items.AboutUs"
             android:exported="true" />
         <activity
-            android:name=".Menu"
+            android:name=".toolbar_items.Profile"
             android:exported="true" />
         <activity
-            android:name=".Musica"
+            android:name=".activity_menu.Menu"
             android:exported="true" />
         <activity
-            android:name=".Encuesta"
+            android:name=".activity_menu.Musica"
             android:exported="true" />
         <activity
-            android:name=".Login"
+            android:name=".sing_in_up.Encuesta"
             android:exported="true" />
         <activity
-            android:name=".SignUp"
+            android:name=".sing_in_up.Login"
+            android:exported="true" />
+        <activity
+            android:name=".sing_in_up.SignUp"
             android:exported="true" />
         <activity
             android:name=".MainActivity"

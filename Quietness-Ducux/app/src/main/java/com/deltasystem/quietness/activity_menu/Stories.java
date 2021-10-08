@@ -1,4 +1,4 @@
-package com.deltasystem.quietness;
+package com.deltasystem.quietness.activity_menu;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import com.deltasystem.quietness.R;
 
 public class Stories extends AppCompatActivity {
 

@@ -14,11 +14,12 @@ public class Validador {
 	private String jdbcUrl = "jdbc:mysql://sql3.freesqldatabase.com:3306/sql3442286";	//URGENTE: generalize connection SQL
 
 	public boolean validar(String email, String passwd) {
-		String password = hp.hashed(passwd,"SHA-256").toString();
+		String password = hp.hashed(passwd,"SHA-256").toString(); //the encryption function is called with the SHA-256 algorithm.
 		String sql = String.format("SELECT * FROM `clients` WHERE (email=\"%s\" AND passwd=\"%s\")",email,password); //SQL statement
 		ResultSet result;
 		Connection connection = null;
 		try {
+			//configures the database
 			Class.forName("com.mysql.jdbc.Driver");
 			StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
 			StrictMode.setThreadPolicy(policy);

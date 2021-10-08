@@ -1,4 +1,4 @@
-package com.deltasystem.quietness;
+package com.deltasystem.quietness.toolbar_items;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.deltasystem.quietness.Encrypt.HashPasswd;
+import com.deltasystem.quietness.R;
+import com.deltasystem.quietness.activity_menu.Menu;
 import com.deltasystem.quietness.sql.SQLRequest;
 
 public class Profile extends AppCompatActivity {
@@ -22,20 +24,20 @@ public class Profile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        initializationTxt();
-        initializationBtn();
+        initialization_txt();
+        initialization_btn();
         info();
 
 
     }
 
-    private void initializationTxt(){
+    private void initialization_txt(){
         userTxt = findViewById(R.id.username_text);
         nameTxt = findViewById(R.id.name_text);
         emailTxt = findViewById(R.id.email_Text);
     }
 
-    private void initializationBtn(){
+    private void initialization_btn(){
        // btn_back = (Button) findViewById(R.id.button2);
     }
 
@@ -55,12 +57,14 @@ public class Profile extends AppCompatActivity {
         bdle=this.getIntent().getExtras();
         String password = hp.hashed(bdle.getString("passwd"),"SHA-256").toString();
         SQLRequest sql = new SQLRequest();
-        str = sql.getInfo("clients",bdle.getString("user"),password);
+        str = sql.get_info("clients",bdle.getString("user"),password);
+
         if(str!=null) {
             userTxt.setText(str[0]);
             nameTxt.setText(str[1]);
             emailTxt.setText(str[2]);
         }
+
     }
 
 }

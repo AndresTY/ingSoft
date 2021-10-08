@@ -4,14 +4,13 @@ public class ManualRegisterAPI implements IRegister { //Manual register
 
 	private String name;
 	private String email;
-	private String passwd;
-	private char gender;
-	private String username; // M F PND
+	private String passwd; //has been hashed
+	private char gender; // Male Female Not to say
+	private String username;
 	private String quiz;
 
 		
-	public ManualRegisterAPI(String name,String username, String email, String passwd,char gender,String quiz) { //Constructor
-
+	public ManualRegisterAPI(String name,String username, String email, String passwd,char gender,String quiz) { //register constructor
 		this.name = name;
 		this.username=username;
 		this.email = email;

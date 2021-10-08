@@ -1,4 +1,4 @@
-package com.deltasystem.quietness;
+package com.deltasystem.quietness.sing_in_up;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,8 +13,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
+import com.deltasystem.quietness.R;
 import com.deltasystem.quietness.register.Register;
 
 import java.io.IOException;
@@ -28,12 +28,12 @@ public class SignUp extends AppCompatActivity {
     EditText _passwordText = null;
     EditText _reEnterPasswordText = null;
     Button _signupButton = null;
-    int contId=4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+
         opciones = (Spinner) findViewById(R.id.spinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.generos, android.R.layout.simple_spinner_item);
         opciones.setAdapter(adapter);
@@ -47,13 +47,8 @@ public class SignUp extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parent) {
             }
         });
-        _nameText = findViewById(R.id.nombre);
-        _lastnameText = findViewById(R.id.apellido);
-        _userText = findViewById(R.id.usuario);
-        _emailText = findViewById(R.id.correo);
-        _passwordText = findViewById(R.id.password_id);
-        _reEnterPasswordText = findViewById(R.id.checkpassw);
-        _signupButton = findViewById(R.id.button);
+
+        get_info_boxes();
 
         _signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,51 +61,54 @@ public class SignUp extends AppCompatActivity {
             }
         });
     }
+
+    private void get_info_boxes(){
+        _nameText = findViewById(R.id.nombre);
+        _lastnameText = findViewById(R.id.apellido);
+        _userText = findViewById(R.id.usuario);
+        _emailText = findViewById(R.id.correo);
+        _passwordText = findViewById(R.id.password_id);
+        _reEnterPasswordText = findViewById(R.id.checkpassw);
+        _signupButton = findViewById(R.id.button);
+    }
+
     public void signup(View v) throws IOException {
-        if (!validate()) {
-            onSignupFailed();
-            return;
-        }else{
-            char genre;
-            String name = _nameText.getText().toString();
-            String lastName = _lastnameText.getText().toString();
-            String user = _userText.getText().toString();
-            String email = _emailText.getText().toString();
-            String password = _passwordText.getText().toString();
-            String genero = opciones.getSelectedItem().toString();
-            Register register = new Register();
-            genre = genero.charAt(0);
-            String nombreCompleto = name+" "+lastName;
-            register.registerUserManual(nombreCompleto,user,email,password,genre," ");
-            onSignupSuccess();
-            onClickRegister(v);
-        }
-        _signupButton.setEnabled(false);
+
         String name = _nameText.getText().toString();
         String lastName = _lastnameText.getText().toString();
         String user = _userText.getText().toString();
         String email = _emailText.getText().toString();
         String password = _passwordText.getText().toString();
-        String reEnterPassword = _reEnterPasswordText.getText().toString();
+        String re_password = _reEnterPasswordText.getText().toString();
+
+        if (!validate(name,lastName,user,email,password,re_password)) {
+            onSignupFailed();
+            return;
+        }else {
+
+            Register register = new Register();
+            char genre = opciones.getSelectedItem().toString().charAt(0);
+            String nombreCompleto = name + " " + lastName;
+            register.register_user_manual(nombreCompleto, user, email, password, genre, " ");
+            onSignupSuccess();
+            onClickRegister(v);
+
+        }
 
     }
+
     public void onSignupSuccess() {
         Toast.makeText(this, "Proceso de registro exitoso", Toast.LENGTH_LONG).show();
         _signupButton.setEnabled(true);
     }
+
     public void onSignupFailed() {
         Toast.makeText(this, "Falló proceso de registro", Toast.LENGTH_LONG).show();
         _signupButton.setEnabled(true);
     }
-    public boolean validate() {
-        boolean valid = true;
 
-        String name = _nameText.getText().toString();
-        String lastName = _lastnameText.getText().toString();
-        String user = _userText.getText().toString();
-        String email = _emailText.getText().toString();
-        String password = _passwordText.getText().toString();
-        String reEnterPassword = _reEnterPasswordText.getText().toString();
+    public boolean validate(String name,String lastname,String user,String email,String password,String re_password) {
+        boolean valid = true;
 
         if (name.isEmpty() || name.length() < 3) {
             _nameText.setError("Introduce al menos tres caracteres");
@@ -119,7 +117,7 @@ public class SignUp extends AppCompatActivity {
             _nameText.setError(null);
         }
 
-        if (lastName.isEmpty()) {
+        if (lastname.isEmpty()) {
             _lastnameText.setError("Introduce un apellido");
             valid = false;
         } else {
@@ -148,7 +146,7 @@ public class SignUp extends AppCompatActivity {
             _passwordText.setError(null);
         }
 
-        if (reEnterPassword.isEmpty() || reEnterPassword.length() < 4 || reEnterPassword.length() > 12 || !(reEnterPassword.equals(password))) {
+        if (re_password.isEmpty() || re_password.length() < 4 || re_password.length() > 12 || !(re_password.equals(password))) {
             _reEnterPasswordText.setError("Las contraseñas no coinciden");
             valid = false;
         } else {
@@ -163,7 +161,8 @@ public class SignUp extends AppCompatActivity {
         startActivity(intent);
     }
     public void onClickRegister(View view){
-        Intent intent = new Intent(SignUp.this, Encuesta.class);
+        Intent intent = new Intent(SignUp.this, TermOfService.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         String email = _emailText.getText().toString();
         String password = _passwordText.getText().toString();
         intent.putExtra("user",email);

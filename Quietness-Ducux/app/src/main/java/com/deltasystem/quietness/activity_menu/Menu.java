@@ -1,4 +1,4 @@
-package com.deltasystem.quietness;
+package com.deltasystem.quietness.activity_menu;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.deltasystem.quietness.toolbar_items.AboutUs;
+import com.deltasystem.quietness.toolbar_items.Profile;
+import com.deltasystem.quietness.R;
+import com.deltasystem.quietness.toolbar_items.settings;
+
 public class Menu extends AppCompatActivity {
 
     private Button btnMusic,btnSleep,btnCalendar,btnStory;
@@ -20,8 +25,8 @@ public class Menu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
-        inicializateBtn();
-        toolbarConfig();
+        initialize_btn();
+        toolbar_config();
 
         btnMusic.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,7 +59,8 @@ public class Menu extends AppCompatActivity {
         int id = item.getItemId();
 
         if(id==R.id.Settings){
-            Toast.makeText(this,"Settings",Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this,"Settings",Toast.LENGTH_SHORT).show();
+            open_settings();
         } else if (id == R.id.About) {
             //Toast.makeText(this, "About", Toast.LENGTH_SHORT).show();
             open_about();
@@ -87,6 +93,16 @@ public class Menu extends AppCompatActivity {
         startActivity(intent);
     }
 
+    private void open_settings (){
+        ble = this.getIntent().getExtras();
+        String user = ble.getString("user");
+        String passwd = ble.getString("passwd");
+        Intent intent = new Intent(Menu.this, settings.class);
+        intent.putExtra("user",ble.getString("user"));
+        intent.putExtra("passwd",ble.getString("passwd"));
+        startActivity(intent);
+    }
+
     private void open_Music(){
         ble = this.getIntent().getExtras();
         String user = ble.getString("user");
@@ -111,19 +127,19 @@ public class Menu extends AppCompatActivity {
         ble = this.getIntent().getExtras();
         String user = ble.getString("user");
         String passwd = ble.getString("passwd");
-        Intent intent = new Intent(Menu.this, Calendar.class);
+        Intent intent = new Intent(Menu.this, CalendarView.class);
         intent.putExtra("user",ble.getString("user"));
         intent.putExtra("passwd",ble.getString("passwd"));
         startActivity(intent);
     }
 
-    private void toolbarConfig(){
+    private void toolbar_config(){
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
     }
 
 
-    private void inicializateBtn(){
+    private void initialize_btn(){
         btnMusic = (Button) findViewById(R.id.BtnMusic);
         btnCalendar = (Button) findViewById(R.id.BtnCalendar);
         btnSleep = (Button) findViewById(R.id.BtnSleep);

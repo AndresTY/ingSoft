@@ -16,15 +16,15 @@ public class sendInfo {
 	private SQLRequest SqlR= new SQLRequest();
 	String jdbcUrl = "jdbc:mysql://sql3.freesqldatabase.com:3306/sql3442286"; //DataBase DIR
 	
-	private int getIdUser(String a) {
-		String sql = String.format("SELECT IDUser FROM users WHERE email==\"%s\" OR name==\"%s\"",a,a);
+	private int getI_id_user(String a) { //get user id
+		String sql = String.format("SELECT row FROM users WHERE email==\"%s\" OR name==\"%s\"",a,a);
 		Connection connection = null;
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			connection = DriverManager.getConnection(jdbcUrl,"sql3442286","qbM8XpxegR"); //Connect to DB
 			Statement statement = connection.createStatement();
 			ResultSet result = statement.executeQuery(sql);
-			int user = result.getInt("IDUser");
+			int user = result.getInt("row");
 			return user;
 			
 		} catch (SQLException | ClassNotFoundException e){
@@ -41,12 +41,12 @@ public class sendInfo {
 			}
 	}
 	
-	public void updateInfo(String name, String passwd, String Change) {
+	public void updateInfo(String name, String passwd, String Change) {  //update the user
 		UpdateUser u = new UpdateUser(); 
-		SqlR.updateUser(String.format("%s",u.update(name,passwd)),getIdUser(Change)); //update user
+		SqlR.update_user(String.format("%s",u.update(name,passwd)),getI_id_user(Change));
 	}
 
-	public void addQuiz(String email, String passwd, String quiz){
+	public void add_quiz(String email, String passwd, String quiz){ //add the quiz to the user
 		HashPasswd hp = new HashPasswd();
 		String sql = String.format("UPDATE clients SET quiz=\"%s\" WHERE (email=\"%s\" AND passwd=\"%s\");",quiz,email,hp.hashed(passwd,"SHA-256"));
 		int result;

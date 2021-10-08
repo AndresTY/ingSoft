@@ -42,5 +42,7 @@
     <string name="back">Back</string>
     <string name="about">About Us</string>
     <string name="save">Save</string>
-
+    <string name="TermOfservice">Terminos y condiciones</string>
+    <string name="TermService">Versión resumida: Las Cuentas de Usuario y las Organizaciones tienen diferentes controles administrativos; una persona debe crear tu cuenta; debes tener 13 años o más; debes proporcionar una dirección de correo electrónico válida; y no es posible tener más de una cuenta gratuita. Eres el único responsable de tu Cuenta y de todo lo que ocurra mientras estas conectado o usando tu Cuenta. Eres responsable de mantener tu cuenta segura.\n1. Controles de la cuentaUsuarios. Sujeto a estos términos, conserva el control administrativo definitivo sobre tu cuenta de usuario y el Contenido dentro de ella.Organizaciones. El propietario de una Organización que fue creada bajo estos Términos tiene el control administrativo final sobre esa Organización y el Contenido dentro de ella. Dentro del Servicio, un propietario puede administrar el acceso del Usuario a los datos y proyectos de la Organización. Una Organización puede tener múltiples propietarios, pero debe haber al menos una Cuenta de Usuario designada como propietario de una Organización. Si eres el propietario de una Organización bajo estos términos, te consideramos responsable de las acciones que se llevan a cabo en o a través de dicha Organización.</string>
+    <string name="settings">Settings</string>
 </resources>

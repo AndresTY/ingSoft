@@ -1,15 +1,16 @@
-package com.deltasystem.quietness;
+package com.deltasystem.quietness.activity_menu;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.media.Image;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
+
+import com.deltasystem.quietness.R;
 
 public class Musica extends AppCompatActivity {
 
@@ -26,12 +27,16 @@ public class Musica extends AppCompatActivity {
     private Bundle ble =null;
 
     MediaPlayer vectmp [] = new MediaPlayer[8];
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_musica);
-        inicialite();
-        loadSongs();
+
+        initialize();
+        load_songs();
+
         _bt1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -45,51 +50,60 @@ public class Musica extends AppCompatActivity {
                 Play(1);
             }
         });
+
         _bt3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Play(2);
             }
         });
+
         _bt4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Play(3);
             }
         });
+
         _bt5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Play(4);
             }
         });
+
         _bt6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Play(5);
             }
         });
+
         _bt7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Play(6);
             }
         });
+
         _bt8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Play(7);
             }
         });
+
         _reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 open_menu();
             }
         });
+
     }
 
-    private void inicialite(){
+    private void initialize(){
+
         _bt1 = (Button) findViewById(R.id.song1);
         _bt2 = findViewById(R.id.song2);
         _bt3 = (Button) findViewById(R.id.song3);
@@ -99,9 +113,11 @@ public class Musica extends AppCompatActivity {
         _bt7 = (Button) findViewById(R.id.song7);
         _bt8 = (Button) findViewById(R.id.song8);
         _reset = (Button) findViewById(R.id.reset);
+
     }
 
-    private void loadSongs(){
+    private void load_songs(){
+
         vectmp[0] = MediaPlayer.create(this, R.raw.s1);
         vectmp[1] = MediaPlayer.create(this, R.raw.s2);
         vectmp[2] = MediaPlayer.create(this, R.raw.s3);
@@ -110,16 +126,23 @@ public class Musica extends AppCompatActivity {
         vectmp[5] = MediaPlayer.create(this, R.raw.s6);
         vectmp[6] = MediaPlayer.create(this, R.raw.s7);
         vectmp[7] = MediaPlayer.create(this, R.raw.s8);
+
     }
 
     private void Play(int i){
+
         if(vectmp[i].isPlaying()){
+
             vectmp[i].pause();
             Toast.makeText(this,"Pausa",Toast.LENGTH_SHORT).show();
+
         }else{
+
             vectmp[i].start();
             Toast.makeText(this,"Play",Toast.LENGTH_SHORT).show();
+
         }
+
     }
 
     private void reset(){
@@ -130,6 +153,7 @@ public class Musica extends AppCompatActivity {
     }
 
     private void open_menu(){
+
         ble = this.getIntent().getExtras();
         String user = ble.getString("user");
         String passwd = ble.getString("passwd");
@@ -137,5 +161,7 @@ public class Musica extends AppCompatActivity {
         intent.putExtra("user",ble.getString("user"));
         intent.putExtra("passwd",ble.getString("passwd"));
         startActivity(intent);
+
     }
+
 }

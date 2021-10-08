@@ -1,14 +1,14 @@
-package com.deltasystem.quietness;
+package com.deltasystem.quietness.sing_in_up;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-
+import com.deltasystem.quietness.R;
+import com.deltasystem.quietness.activity_menu.Menu;
 import com.deltasystem.quietness.update.sendInfo;
 
 public class Encuesta extends AppCompatActivity {
@@ -20,13 +20,15 @@ public class Encuesta extends AppCompatActivity {
     private RadioGroup q1,q2,q3,q4;
     private Button _load=null;
     private Bundle bdle=null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_encuesta);
 
-        initilizacionRadioButton();
-        initilizacionRadioGroup();
+        initialization_radio_button();
+        initialization_radio_group();
+
         _load = (Button) findViewById(R.id.LoadData);
         _load.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,6 +38,7 @@ public class Encuesta extends AppCompatActivity {
         });
     }
 
+    //extracts survey data
     public String Load(){
         int Q1aID = q1.getCheckedRadioButtonId();
         int Q2aID = q2.getCheckedRadioButtonId();
@@ -55,30 +58,39 @@ public class Encuesta extends AppCompatActivity {
         return String.format("%s;%s;%s;%s;",a1,a2,a3,a4);
     }
 
-    private void LoadQuiz(String a){
+    //upload quiz to database
+    private void Load_quiz(String a){
         bdle = this.getIntent().getExtras();
         String user = bdle.getString("user");
         String passwd = bdle.getString("passwd");
         sendInfo SdIn = new sendInfo();
-        SdIn.addQuiz(user,passwd,a);
+        SdIn.add_quiz(user,passwd,a);
     }
 
+    //button action
     public void onClickLoad(View view){
         String quiz =Load();
+        bdle = this.getIntent().getExtras();
+        //extracts user information
+        String user = bdle.getString("user");
+        String passwd = bdle.getString("passwd");
         Intent intent = new Intent(Encuesta.this, Menu.class);
-        LoadQuiz(quiz);
-        intent.putExtra("Result", quiz);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        Load_quiz(quiz);
+        //pass the data to another view
+        intent.putExtra("user",bdle.getString("user"));
+        intent.putExtra("passwd",bdle.getString("passwd"));
         startActivity(intent);
     }
 
-    private void initilizacionRadioGroup(){
+    private void initialization_radio_group(){
         q1 = (RadioGroup) findViewById(R.id.Q1RG);
         q2 = (RadioGroup) findViewById(R.id.Q2RG);
         q3 = (RadioGroup) findViewById(R.id.Q3RG);
         q4 = (RadioGroup) findViewById(R.id.Q4RG);
     }
 
-    private void initilizacionRadioButton(){
+    private void initialization_radio_button(){
         q11 = (RadioButton) findViewById(R.id.Q11);
         q12 = (RadioButton) findViewById(R.id.Q12);
         q13 = (RadioButton) findViewById(R.id.Q13);

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Calendar">
+    tools:context=".activity_menu.CalendarView">
 
     <TextView
         android:id="@+id/CalendarTxt"
@@ -38,52 +38,26 @@
         android:layout_width="293dp"
         android:layout_height="40dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="Location"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.442" />
-
-    <EditText
-        android:id="@+id/StartDateTxt"
-        android:layout_width="293dp"
-        android:layout_height="40dp"
-        android:ems="10"
         android:inputType="textPersonName"
-        android:hint="Start Date"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.26" />
-
-    <EditText
-        android:id="@+id/EndDateTxt"
-        android:layout_width="293dp"
-        android:layout_height="40dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="End Date"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.354" />
+        app:layout_constraintVertical_bias="0.248" />
 
     <EditText
         android:id="@+id/descriptionTxt"
         android:layout_width="293dp"
         android:layout_height="40dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="Description"
+        android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.531" />
+        app:layout_constraintVertical_bias="0.337" />
 
     <Button
         android:id="@+id/save_Btn"
@@ -94,8 +68,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.696" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/bck"

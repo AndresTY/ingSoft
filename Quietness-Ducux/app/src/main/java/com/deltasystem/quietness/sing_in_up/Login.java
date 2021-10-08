@@ -1,4 +1,4 @@
-package com.deltasystem.quietness;
+package com.deltasystem.quietness.sing_in_up;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,12 +9,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.deltasystem.quietness.activity_menu.Menu;
+import com.deltasystem.quietness.R;
 import com.deltasystem.quietness.login.Validador;
 
 public class Login extends AppCompatActivity {
     EditText _emailLoginText = null;
     EditText _passwordLoginText = null;
     Button _signupButtonLogin = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +29,7 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (login()) {
-                    openMenu(v);
+                    open_menu(v);
                 } else {
                     onLoginFailed();
                 }
@@ -34,18 +37,21 @@ public class Login extends AppCompatActivity {
         });
     }
 
-    private void openMenu(View v){
+
+    private void open_menu(View v){
         String email = _emailLoginText.getText().toString();
         String password = _passwordLoginText.getText().toString();
-
         Intent intent = new Intent(Login.this, Menu.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         intent.putExtra("user",email);
         intent.putExtra("passwd",password);
         startActivity(intent);
     }
 
+
     public boolean login() {
-        if (!validateLogin()) {
+
+        if (!validate_login()) {
             return false;
         }else {
             onLoginSuccess();
@@ -53,26 +59,25 @@ public class Login extends AppCompatActivity {
             return true;
         }
 
-
-        //String email = _emailLoginText.getText().toString();
-        //String password = _passwordLoginText.getText().toString();
-
     }
+
     public void onLoginSuccess() {
         Toast.makeText(this, "Inicio de sesion exitoso", Toast.LENGTH_SHORT).show();
         _signupButtonLogin.setEnabled(true);
     }
+
     public void onLoginFailed() {
         Toast.makeText(this, "Falló proceso de inicio de sesión", Toast.LENGTH_SHORT).show();
         _signupButtonLogin.setEnabled(true);
     }
-    public boolean validateLogin() {
+
+    public boolean validate_login() {
+
         Validador v = new Validador();
         boolean valid=true;
         boolean entry=false;
         String email = _emailLoginText.getText().toString();
         String password = _passwordLoginText.getText().toString();
-
 
         if (email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             _emailLoginText.setError("Introduce una dirección de email válida");

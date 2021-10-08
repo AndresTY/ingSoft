@@ -3,6 +3,6 @@
     <string-array name="generos">
         <item>M</item>
         <item>F</item>
-        <item>Otro</item>
+        <item>N</item>
     </string-array>
 </resources>
