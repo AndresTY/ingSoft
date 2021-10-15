@@ -5,47 +5,43 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.speech.tts.TextToSpeech;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-
+import android.widget.EditText;
+import android.widget.SeekBar;
+import android.widget.TextView;
 import com.deltasystem.quietness.R;
+
+import java.util.Locale;
 
 public class Stories extends AppCompatActivity {
 
-    private Button btn_back, l1,l2,l3,l4;
+    private Button btn_back,btn_play,btn_stop;
+    private TextView txt;
     private Bundle ble=null;
+    private TextToSpeech tts;
+    private SeekBar SBPitch,SBSpeed;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stories);
         initializationBtn();
-        l1.setOnClickListener(new View.OnClickListener() {
+
+
+        btn_play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent bintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://arxiv.org/pdf/2108.07387.pdf"));
-                startActivity(bintent);
+                speak();
             }
         });
-        l2.setOnClickListener(new View.OnClickListener() {
+
+        btn_stop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent bintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://ergoplatform.org/docs/whitepaper.pdf"));
-                startActivity(bintent);
-            }
-        });
-        l3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent bintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.reddit.com/r/programming/comments/byuoel/linus_torvalds_thinks_java_is_a_horrible_language/"));
-                startActivity(bintent);
-            }
-        });
-        l4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent bintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://stackoverflow.com/questions/961942/what-is-the-worst-programming-language-you-ever-worked-with"));
-                startActivity(bintent);
+                stopSpeak();
             }
         });
 
@@ -55,15 +51,64 @@ public class Stories extends AppCompatActivity {
                 open_menu();
             }
         });
+
+
+
     }
 
+    private void stopSpeak() {
+        if(tts.isSpeaking()){
+            tts.stop();
+        }
+    }
+
+    private void speak() {
+        String text = txt.getText().toString();
+        float pitch = (float) SBPitch.getProgress()/50;
+        if(pitch<0.1) pitch = 0.1f;
+        float speed = (float) SBSpeed.getProgress()/50;
+        if(speed<0.1) speed = 0.1f;
+
+        tts.setPitch(pitch);
+        tts.setSpeechRate(speed);
+        tts.speak(text,TextToSpeech.QUEUE_FLUSH,null);
+    }
+
+    @Override
+    protected void onDestroy() {
+        if(tts != null){
+            tts.stop();
+            tts.shutdown();
+        }
+
+        super.onDestroy();
+
+    }
 
     private void initializationBtn(){
         btn_back = (Button) findViewById(R.id.btnBack);
-        l1 = findViewById(R.id.BL1);
-        l2 = findViewById(R.id.BL2);
-        l3 = findViewById(R.id.BL3);
-        l4 = findViewById(R.id.BL4);
+        btn_play = (Button) findViewById(R.id.Play_story);
+        btn_stop = (Button) findViewById(R.id.stop_story);
+        txt = findViewById(R.id.ReadTxt);
+        SBPitch = findViewById(R.id.pitch);
+        SBSpeed = findViewById(R.id.spped);
+        tts = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int i) {
+                if(i==TextToSpeech.SUCCESS){
+                    Locale es = new Locale("spa","COL");
+                    int result = tts.setLanguage(es);
+
+                    if(result == TextToSpeech.LANG_MISSING_DATA || result== TextToSpeech.LANG_NOT_SUPPORTED){
+                        Log.e("TTS", "Language not supported" );
+                    }else{
+                        btn_play.setEnabled(true);
+                    }
+                }else{
+                    Log.e("TTS", "Initialization failed" );
+                }
+            }
+        });
 
     }
 

@@ -70,4 +70,60 @@ public class sendInfo {
 			}
 		}
 	}
+
+	public void add_sueno(String email, String passwd, String sleep){ //add the quiz to the user
+		HashPasswd hp = new HashPasswd();
+		String sql = String.format("UPDATE clients SET sleep_register =\"%s\" WHERE (email = \"%s\" AND passwd = \"%s\");",sleep,email,hp.hashed(passwd,"SHA-256"));
+		int result;
+		Connection connection = null;
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+			StrictMode.setThreadPolicy(policy);
+			connection = DriverManager.getConnection(jdbcUrl,"sql3442286","qbM8XpxegR"); //Connect to DB
+			Statement statement = connection.createStatement();
+			result = statement.executeUpdate(sql);
+		} catch (SQLException | ClassNotFoundException e){
+			e.printStackTrace();
+		}finally {
+			if (connection != null) {
+				try {
+					connection.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+	}
+
+	//traer sueño y ya XD
+	public String get_sleep_register(String a) { //get user id
+		String sql = String.format("SELECT sleep_register FROM clients WHERE email = \"%s\"",a);
+		Connection connection = null;
+		ResultSet result = null;
+		String aux = "";
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			connection = DriverManager.getConnection(jdbcUrl,"sql3442286","qbM8XpxegR"); //Connect to DB
+			Statement statement = connection.createStatement();
+			result = statement.executeQuery(sql);
+			while (result.next()) { //extracts the information from the database
+				aux = result.getString("sleep_register");
+			}
+
+			return aux;
+
+		} catch (SQLException | ClassNotFoundException e){
+			e.printStackTrace();
+			return "";
+		}finally {
+			if (connection != null) {
+				try {
+					connection.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+	}
 }

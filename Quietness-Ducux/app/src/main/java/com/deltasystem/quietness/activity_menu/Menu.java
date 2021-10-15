@@ -5,25 +5,28 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.deltasystem.quietness.sueno.Main_Activity_Sueno;
 import com.deltasystem.quietness.toolbar_items.AboutUs;
+import com.deltasystem.quietness.toolbar_items.Logout;
 import com.deltasystem.quietness.toolbar_items.Profile;
 import com.deltasystem.quietness.R;
 import com.deltasystem.quietness.toolbar_items.settings;
 
 public class Menu extends AppCompatActivity {
 
-    private Button btnMusic,btnSleep,btnCalendar,btnStory;
+    private ImageButton btnMusic,btnSleep,btnCalendar,btnStory,btn_tips;
     private Bundle ble=null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu);
+        setContentView(R.layout.activity_elementos);
 
         initialize_btn();
         toolbar_config();
@@ -46,6 +49,19 @@ public class Menu extends AppCompatActivity {
                 open_Calendar();
             }
         });
+        btnSleep.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                open_Sleep();
+            }
+        });
+        btn_tips.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                open_Tips();
+            }
+        });
+
     }
 
     @Override
@@ -65,7 +81,7 @@ public class Menu extends AppCompatActivity {
             //Toast.makeText(this, "About", Toast.LENGTH_SHORT).show();
             open_about();
         } else if (id == R.id.Logout){
-            Toast.makeText(this, "LOGOUT", Toast.LENGTH_SHORT).show();
+            logout();
         } else if (id == R.id.Profile){
             //Toast.makeText(this,"Profile",Toast.LENGTH_SHORT).show();
             open_profile();
@@ -78,6 +94,16 @@ public class Menu extends AppCompatActivity {
         String user = ble.getString("user");
         String passwd = ble.getString("passwd");
         Intent intent = new Intent(Menu.this, Profile.class);
+        intent.putExtra("user",ble.getString("user"));
+        intent.putExtra("passwd",ble.getString("passwd"));
+        startActivity(intent);
+    }
+
+    private void logout (){
+        ble = this.getIntent().getExtras();
+        String user = ble.getString("user");
+        String passwd = ble.getString("passwd");
+        Intent intent = new Intent(Menu.this, Logout.class);
         intent.putExtra("user",ble.getString("user"));
         intent.putExtra("passwd",ble.getString("passwd"));
         startActivity(intent);
@@ -133,6 +159,26 @@ public class Menu extends AppCompatActivity {
         startActivity(intent);
     }
 
+    private void open_Sleep(){
+        ble = this.getIntent().getExtras();
+        String user = ble.getString("user");
+        String passwd = ble.getString("passwd");
+        Intent intent = new Intent(Menu.this, Main_Activity_Sueno.class);
+        intent.putExtra("user",ble.getString("user"));
+        intent.putExtra("passwd",ble.getString("passwd"));
+        startActivity(intent);
+    }
+
+    private void open_Tips(){
+        ble = this.getIntent().getExtras();
+        String user = ble.getString("user");
+        String passwd = ble.getString("passwd");
+        Intent intent = new Intent(Menu.this, Tips.class);
+        intent.putExtra("user",ble.getString("user"));
+        intent.putExtra("passwd",ble.getString("passwd"));
+        startActivity(intent);
+    }
+
     private void toolbar_config(){
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -140,10 +186,12 @@ public class Menu extends AppCompatActivity {
 
 
     private void initialize_btn(){
-        btnMusic = (Button) findViewById(R.id.BtnMusic);
-        btnCalendar = (Button) findViewById(R.id.BtnCalendar);
-        btnSleep = (Button) findViewById(R.id.BtnSleep);
-        btnStory = (Button) findViewById(R.id.BtnHistoria);
+        btnMusic = (ImageButton) findViewById(R.id.BtnMusic);
+        btnCalendar = (ImageButton) findViewById(R.id.BtnCalendar);
+        btnSleep = (ImageButton) findViewById(R.id.BtnSleep);
+        btnStory = (ImageButton) findViewById(R.id.BtnHistoria);
+        btn_tips = (ImageButton) findViewById(R.id.Btn_tips);
     }
+
 
 }

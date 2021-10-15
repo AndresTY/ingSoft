@@ -81,7 +81,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView7"
-        app:layout_constraintVertical_bias="0.125000014" />
+        app:layout_constraintVertical_bias="0.115" />
 
     <EditText
         android:id="@+id/password_login"
@@ -97,7 +97,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/correo_login"
-        app:layout_constraintVertical_bias="0.122" />
+        app:layout_constraintVertical_bias="0.11" />
 
     <ImageView
         android:id="@+id/imageView15"

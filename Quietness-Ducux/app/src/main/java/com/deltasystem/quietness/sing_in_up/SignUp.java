@@ -2,6 +2,7 @@ package com.deltasystem.quietness.sing_in_up;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -16,8 +17,10 @@ import android.widget.Toast;
 
 import com.deltasystem.quietness.R;
 import com.deltasystem.quietness.register.Register;
+import com.deltasystem.quietness.update.sendInfo;
 
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 
 public class SignUp extends AppCompatActivity {
     Spinner opciones;
@@ -89,7 +92,7 @@ public class SignUp extends AppCompatActivity {
             Register register = new Register();
             char genre = opciones.getSelectedItem().toString().charAt(0);
             String nombreCompleto = name + " " + lastName;
-            register.register_user_manual(nombreCompleto, user, email, password, genre, " ");
+            register.register_user_manual(nombreCompleto, user, email, password, genre, " ", " ");
             onSignupSuccess();
             onClickRegister(v);
 
@@ -123,7 +126,6 @@ public class SignUp extends AppCompatActivity {
         } else {
             _lastnameText.setError(null);
         }
-
 
         if (email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             _emailText.setError("Introduce una dirección de email válida");

@@ -42,7 +42,99 @@
     <string name="back">Back</string>
     <string name="about">About Us</string>
     <string name="save">Save</string>
-    <string name="TermOfservice">Terminos y condiciones</string>
-    <string name="TermService">Versión resumida: Las Cuentas de Usuario y las Organizaciones tienen diferentes controles administrativos; una persona debe crear tu cuenta; debes tener 13 años o más; debes proporcionar una dirección de correo electrónico válida; y no es posible tener más de una cuenta gratuita. Eres el único responsable de tu Cuenta y de todo lo que ocurra mientras estas conectado o usando tu Cuenta. Eres responsable de mantener tu cuenta segura.\n1. Controles de la cuentaUsuarios. Sujeto a estos términos, conserva el control administrativo definitivo sobre tu cuenta de usuario y el Contenido dentro de ella.Organizaciones. El propietario de una Organización que fue creada bajo estos Términos tiene el control administrativo final sobre esa Organización y el Contenido dentro de ella. Dentro del Servicio, un propietario puede administrar el acceso del Usuario a los datos y proyectos de la Organización. Una Organización puede tener múltiples propietarios, pero debe haber al menos una Cuenta de Usuario designada como propietario de una Organización. Si eres el propietario de una Organización bajo estos términos, te consideramos responsable de las acciones que se llevan a cabo en o a través de dicha Organización.</string>
-    <string name="settings">Settings</string>
+    <string name="TermOfservice">POLÍTICA DE PRIVACIDAD</string>
+    <string name="first_paragraph">
+        La presente Política de Privacidad establece los términos en que QUIETNESS APP usa y protege la
+        información que es proporcionada por sus usuarios al momento de utilizar su aplicación móvil. Este
+        proyecto está comprometido con la seguridad de los datos de sus usuarios. Cuando le pedimos llenar
+        los campos de información personal con la cual usted pueda ser identificado, lo hacemos asegurando
+        que sólo se emplea de acuerdo con los términos de este documento. Sin embargo, esta Política de
+        Privacidad puede cambiar con el tiempo o ser actualizada por lo que le recomendamos y enfatizamos
+        revisar continuamente esta página para asegurarse que está de acuerdo con dichos cambios.
+    </string>
+    <string name="subtitle_1">Información que es recogida</string>
+    <string name="second_paragraph">
+        Nuestra aplicación móvil podrá recoger información personal, por ejemplo: Nombre, apellido, usuario,
+        género, información de contacto como su dirección de correo electrónico y contraseña para su
+        registro directo con la aplicación.
+    </string>
+    <string name="subtitle_2">Uso de la información recogida</string>
+    <string name="third_paragraph">
+        Nuestra aplicación móvil emplea la información con el fin de proporcionar el mejor servicio posible,
+        particularmente para mantener un registro de usuarios y mejorar nuestros servicios. Esto con el fin de
+        brindar un mejor servicio al usuario y este se sienta cómodo y protegido con la aplicación.
+    </string>
+    <string name="fourth_paragraph">
+        QUIETNESS APP está altamente comprometido para cumplir con el compromiso de mantener su
+        información segura. Usamos los sistemas más avanzados y los actualizamos constantemente para
+        asegurarnos que no exista ningún acceso no autorizado.
+    </string>
+    <string name="subtitle_3">Enlaces a terceros</string>
+    <string name="fifth_paragraph">
+        Esta aplicación móvil puede contener enlaces a otros sitios que pueden ser de su interés. Una vez
+        que usted de clic en estos enlaces y abandone nuestra página, ya no tenemos control sobre al sitio al
+        que es redirigido y por lo tanto no somos responsables de los términos o privacidad ni de la
+        protección de sus datos en esos otros sitios terceros. Dichos sitios están sujetos a sus propias
+        políticas de privacidad por lo cual es recomendable que los consulte para confirmar que usted está
+        de acuerdo con estas.
+    </string>
+    <string name="subtitle_4">Control de su información personal</string>
+    <string name="sixth_paragraph">
+        En cualquier momento usted puede restringir la recopilación o el uso de la información personal que
+        es proporcionada a nuestra aplicación móvil.
+    </string>
+    <string name="seventh_paragraph">
+        Este proyecto no venderá, cederá ni distribuirá la información personal que es recopilada sin su
+        consentimiento, salvo que sea requerido por un juez con una orden judicial.
+    </string>
+    <string name="eighth_paragraph">
+        QUIETNESS APP se reserva el derecho de cambiar los términos de la presente Política de
+        Privacidad en cualquier momento.
+    </string>
+
+    <string name="settings">Configuración</string>
+
+    <string name="registro_manual">Agregar registro manualmente</string>
+    <string name="registro_alarma">Iniciar alarma de sueño</string>
+    <string name="time_selected_is">La hora seleccionada es:</string>
+    <string name="change_time">Cambia la hora</string>
+    <string name="time_selected_is_ini">La hora inicial es:</string>
+    <string name="time_selected_is_fin">La hora final es:</string>
+    <string name="inicial_time">Cambia la hora inicial</string>
+    <string name="final_time">Cambia la hora final</string>
+    <string name="changed_to">Hora inicial cambiada a las %s</string>
+    <string name="changed_to_f">Hora final cambiada a las %s</string>
+    <string name="sleep_total">Dormiste %s horas y %s minutos.</string>
+    <string name="select_time">Selecciona la hora</string>
+    <string name="aceptar">ACEPTAR</string>
+    <string name="volver">VOLVER</string>
+    <string name="new_notification">Nueva notificación</string>
+    <string name="estadistica">Estadística mensual</string>
+    <string name="grafica">Grafica semanal</string>
+    <string name="Tool_Bar_Text">Quietness</string>
+
+
+    <string name="tv1">Entrenamiento de habilidades de estudio</string>
+    <string name="Boton2">anterior</string>
+    <string name="Boton1">Consejos para afrontar un parcial</string>
+    <string name="Boton3">Consejos para afrontar una exposición</string>
+    <string name="Boton4">Consejos para afrontar un proyecto</string>
+
+    <string name="tv2">Consejos para afrontar un parcial</string>
+    <string name="par1">1. Estudiar con varios días de anticipació. </string>
+    <string name="par2">2. Dormir lo suficiente la noche anterior de presentar el parcial. </string>
+    <string name="par3">3. Meditar antes del parcial. </string>
+    <string name="par4">4. Empezar a repasar por los temas que más te generen dificultad.</string>
+
+    <string name="tv3">Consejos para afrontar una exposición</string>
+    <string name="exp1">1. Haz un esquema de la exposición (Por ejemplo Fractales).</string>
+    <string name="exp2">2. Realiza pausas y habla con naturalidad.</string>
+    <string name="exp3">3. Practica exponiendo a otras personas o frente al espejo.</string>
+
+    <string name="tv4">Consejos para afrontar una proyecto</string>
+    <string name="pro1">1. Divide el proyecto en fases y visualízalo en conjunto.</string>
+    <string name="pro2">2. Haz un seguimiento diario y semanal.</string>
+    <string name="pro3">3. Reuniones efectivas por encima de todo.</string>
+    <string name="pro4">4. Ten un plan B ante cualquier imprevisto.</string>
+
 </resources>

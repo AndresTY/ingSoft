@@ -19,7 +19,6 @@
             android:orientation="vertical" >
 
             <TextView
-                android:id="@+id/textView3"
                 android:layout_width="180dp"
                 android:layout_height="69dp"
                 android:layout_gravity="center"
@@ -31,12 +30,11 @@
             <TextView
                 android:id="@+id/tv_description"
                 android:layout_width="291dp"
-                android:layout_height="468dp"
+                android:layout_height="381dp"
                 android:layout_gravity="center"
                 android:gravity="left"
-                android:maxLines="50"
                 android:padding="16dp"
-                android:text="@string/TermService"
+                android:text="@string/first_paragraph"
                 android:textColor="@color/black"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -44,6 +42,152 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.384" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="69dp"
+                android:layout_gravity="left"
+                android:gravity="left"
+                android:paddingTop="25dp"
+                android:text="@string/subtitle_1"
+                android:textColor="#000000"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/tv_description2"
+                android:layout_width="291dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:gravity="left"
+                android:padding="10dp"
+                android:text="@string/second_paragraph"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.49"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.384" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="69dp"
+                android:layout_gravity="left"
+                android:gravity="left"
+                android:paddingTop="25dp"
+                android:text="@string/subtitle_2"
+                android:textColor="#000000"
+                android:textSize="17sp" />
+            <TextView
+                android:id="@+id/tv_description3"
+                android:layout_width="291dp"
+                android:layout_height="170dp"
+                android:layout_gravity="center"
+                android:gravity="left"
+                android:padding="10dp"
+                android:text="@string/third_paragraph"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.49"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.384" />
+
+            <TextView
+                android:id="@+id/tv_description4"
+                android:layout_width="291dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:gravity="left"
+                android:padding="10dp"
+                android:text="@string/fourth_paragraph"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.49"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.384" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="69dp"
+                android:layout_gravity="left"
+                android:gravity="left"
+                android:paddingTop="25dp"
+                android:text="@string/subtitle_3"
+                android:textColor="#000000"
+                android:textSize="17sp" />
+            <TextView
+                android:id="@+id/tv_description5"
+                android:layout_width="291dp"
+                android:layout_height="270dp"
+                android:layout_gravity="center"
+                android:gravity="left"
+                android:padding="10dp"
+                android:text="@string/fifth_paragraph"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.49"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.384" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="69dp"
+                android:layout_gravity="left"
+                android:gravity="left"
+                android:paddingTop="25dp"
+                android:text="@string/subtitle_4"
+                android:textColor="#000000"
+                android:textSize="17sp" />
+            <TextView
+                android:id="@+id/tv_description6"
+                android:layout_width="291dp"
+                android:layout_height="90dp"
+                android:layout_gravity="center"
+                android:gravity="left"
+                android:padding="10dp"
+                android:text="@string/sixth_paragraph"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.49"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.384" />
+            <TextView
+                android:id="@+id/tv_description7"
+                android:layout_width="291dp"
+                android:layout_height="110dp"
+                android:layout_gravity="center"
+                android:gravity="left"
+                android:padding="10dp"
+                android:text="@string/seventh_paragraph"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.49"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.384" />
+            <TextView
+                android:id="@+id/tv_description8"
+                android:layout_width="291dp"
+                android:layout_height="90dp"
+                android:layout_gravity="center"
+                android:gravity="left"
+                android:padding="10dp"
+                android:text="@string/eighth_paragraph"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.49"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.384" />
+
+
 
             <Button
                 android:id="@+id/acceptBtn"

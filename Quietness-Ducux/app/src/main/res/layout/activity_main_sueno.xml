@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/backsignup"
+    android:padding="20dp">
+
+
+    <LinearLayout
+        android:layout_width="380dp"
+        android:layout_height="697dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp">
+
+        <Button
+            android:id="@+id/btn_grafica"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="150dp"
+            android:backgroundTint="@color/white"
+            android:fontFamily="@font/averiaseriflibrebold"
+            android:text="@string/grafica"
+            android:textColor="@color/darkblue"
+            android:textStyle="bold|italic"
+            tools:layout_editor_absoluteX="116dp"
+            tools:layout_editor_absoluteY="194dp" />
+
+        <Button
+
+            android:id="@+id/btn_estadistica_mensual"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/darkblue"
+            android:fontFamily="@font/averiaseriflibrebold"
+            android:textStyle="bold|italic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="@string/estadistica"
+            tools:layout_editor_absoluteX="100dp"
+            tools:layout_editor_absoluteY="278dp" />
+
+        <Button
+            android:id="@+id/btn_registro_manual"
+            android:backgroundTint="@color/white"
+            android:fontFamily="@font/averiaseriflibrebold"
+            android:textStyle="bold|italic"
+            android:textColor="@color/darkblue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="@string/registro_manual"
+            tools:layout_editor_absoluteX="52dp"
+            tools:layout_editor_absoluteY="437dp" />
+
+        <Button
+            android:id="@+id/btn_registro_alarma"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/darkblue"
+            android:fontFamily="@font/averiaseriflibrebold"
+            android:textStyle="bold|italic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="@string/registro_alarma" />
+
+        <Button
+            android:id="@+id/volverMenu"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="50dp"
+            android:backgroundTint="@color/black"
+            android:fontFamily="@font/averiaseriflibrebold"
+            android:text="@string/volver"
+            android:textColor="@color/white"
+            android:textStyle="bold|italic" />
+    </LinearLayout>
+
+</RelativeLayout>

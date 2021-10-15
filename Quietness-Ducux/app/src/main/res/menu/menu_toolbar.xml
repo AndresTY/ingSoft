@@ -3,13 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item android:id="@+id/Settings"
-        android:title="Settings" />
+        android:title="Configuración" />
     <item android:id="@+id/About"
-        android:title="About" />
+        android:title="Acerca de" />
     <item android:id="@+id/Logout"
-        android:title="Logout" />
+        android:title="Cerrar sesión" />
     <item android:id="@+id/Profile"
-        android:title="Profile"
+        android:title="Perfil"
         android:icon="@drawable/person_icon"
         app:showAsAction="always"/>
 

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cv"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:animateLayoutChanges="true"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="6dp"
+    app:cardUseCompatPadding="true"
+    android:background="@drawable/backsignup">
+
+    <!--
+       <com.google.android.material.appbar.AppBarLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintHorizontal_bias="0.5"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toTopOf="parent">
+
+           <androidx.appcompat.widget.Toolbar
+               android:id="@+id/toolbar"
+               android:layout_width="match_parent"
+               android:layout_height="?attr/actionBarSize"
+               android:background="@color/darkblue"
+               >
+               <TextView
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:fontFamily="@font/averiaseriflibrebold"
+                   android:text="@string/Tool_Bar_Text"
+                   android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                   android:textSize="24sp"
+                   android:textStyle="bold"
+                   android:textColor="@color/white"
+                   >
+               </TextView>
+           </androidx.appcompat.widget.Toolbar>
+   </com.google.android.material.appbar.AppBarLayout>
+    -->
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginTop="2dp">
+
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/BtnSleep"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/bordes_redondeados"
+                android:onClick="funcionSueno"
+                android:scaleType="fitCenter"
+
+                android:src="@drawable/imagenboton" />
+
+            <ImageButton
+                android:id="@+id/BtnMusic"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/bordes_redondeados"
+                android:scaleType="fitCenter"
+                android:src="@drawable/boton_music" />
+
+            <ImageButton
+                android:id="@+id/Btn_tips"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/bordes_redondeados"
+                android:scaleType="fitCenter"
+                android:src="@drawable/imagenboton1" />
+
+            <ImageButton
+                android:id="@+id/BtnCalendar"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/bordes_redondeados"
+                android:scaleType="fitCenter"
+                android:src="@drawable/imagenboton2" />
+
+            <ImageButton
+                android:id="@+id/BtnHistoria"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/bordes_redondeados"
+                android:scaleType="fitCenter"
+                android:src="@drawable/imagenboton3" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>
