@@ -15,7 +15,7 @@
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.635"
+        app:layout_constraintHorizontal_bias="0.592"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.027" />
@@ -25,33 +25,50 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/back_icon"
-        tools:layout_editor_absoluteX="21dp"
-        tools:layout_editor_absoluteY="19dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.058"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.027" />
 
     <Button
         android:id="@+id/Play_story"
-        android:layout_width="93dp"
-        android:layout_height="77dp"
+        android:layout_width="67dp"
+        android:layout_height="58dp"
         android:background="@android:drawable/ic_media_play"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.935" />
+        app:layout_constraintVertical_bias="0.878" />
 
     <Button
         android:id="@+id/stop_story"
-        android:layout_width="93dp"
-        android:layout_height="77dp"
+        android:layout_width="70dp"
+        android:layout_height="58dp"
         android:background="@android:drawable/ic_media_pause"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.871"
+        app:layout_constraintHorizontal_bias="0.818"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.935" />
+        app:layout_constraintVertical_bias="0.878" />
+
+    <Button
+        android:id="@+id/refresh_hist"
+        android:layout_width="70dp"
+        android:layout_height="58dp"
+        android:background="@drawable/ic_refresh"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.656"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976" />
 
     <ScrollView
+        android:id="@+id/scrollView3"
         android:layout_width="373dp"
         android:layout_height="500dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -77,6 +94,7 @@
         android:id="@+id/pitch"
         android:layout_width="118dp"
         android:layout_height="27dp"
+        android:progress="50"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.067"
@@ -88,6 +106,7 @@
         android:id="@+id/spped"
         android:layout_width="119dp"
         android:layout_height="25dp"
+        android:progress="50"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.067"

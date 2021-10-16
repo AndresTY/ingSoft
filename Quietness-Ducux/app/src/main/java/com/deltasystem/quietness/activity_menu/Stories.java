@@ -13,12 +13,13 @@ import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import com.deltasystem.quietness.R;
+import com.deltasystem.quietness.sql.SQLRequest;
 
 import java.util.Locale;
 
 public class Stories extends AppCompatActivity {
 
-    private Button btn_back,btn_play,btn_stop;
+    private Button btn_back,btn_play,btn_stop, btn_refresh;
     private TextView txt;
     private Bundle ble=null;
     private TextToSpeech tts;
@@ -28,8 +29,15 @@ public class Stories extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stories);
-        initializationBtn();
+        initialization_btn();
 
+
+        btn_refresh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                get_txt();
+            }
+        });
 
         btn_play.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,7 +49,7 @@ public class Stories extends AppCompatActivity {
         btn_stop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                stopSpeak();
+                stop_speak();
             }
         });
 
@@ -56,7 +64,14 @@ public class Stories extends AppCompatActivity {
 
     }
 
-    private void stopSpeak() {
+    private void get_txt(){
+        SQLRequest sql = new SQLRequest();
+        String hist = sql.get_hist();
+        txt.setText(hist);
+    }
+
+
+    private void stop_speak() {
         if(tts.isSpeaking()){
             tts.stop();
         }
@@ -85,10 +100,11 @@ public class Stories extends AppCompatActivity {
 
     }
 
-    private void initializationBtn(){
+    private void initialization_btn(){
         btn_back = (Button) findViewById(R.id.btnBack);
         btn_play = (Button) findViewById(R.id.Play_story);
         btn_stop = (Button) findViewById(R.id.stop_story);
+        btn_refresh = findViewById(R.id.refresh_hist);
         txt = findViewById(R.id.ReadTxt);
         SBPitch = findViewById(R.id.pitch);
         SBSpeed = findViewById(R.id.spped);

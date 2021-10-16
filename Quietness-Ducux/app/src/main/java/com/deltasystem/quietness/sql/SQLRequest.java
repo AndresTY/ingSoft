@@ -110,4 +110,38 @@ public class SQLRequest {
 		}
 		return null;
 	}
+
+	public String get_hist(){
+		String info=null;
+		String sql = String.format("SELECT * FROM hist_txt ORDER BY RAND() LIMIT 1"); //SQL statement
+		ResultSet result;
+		Connection connection = null;
+		try {
+			//configuring the database
+			Class.forName("com.mysql.jdbc.Driver");
+			StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+			StrictMode.setThreadPolicy(policy);
+			connection = DriverManager.getConnection(jdbcUrl,"sql3442286","qbM8XpxegR"); //Connect to DB
+			Statement statement = connection.createStatement();
+			result = statement.executeQuery(sql);
+			while (result.next()) { //extracts the information from the database
+
+				info=result.getString("hist");
+			}
+			return info;
+
+		} catch (SQLException | ClassNotFoundException e) {
+			e.printStackTrace();//Report ERROR
+		}
+		finally {
+			if (connection != null) {
+				try {
+					connection.close(); // closes Connection
+				} catch (SQLException e) {
+					e.printStackTrace(); //Report ERROR
+				}
+			}
+		}
+		return null;
+	}
 }
