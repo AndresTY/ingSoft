@@ -47,6 +47,7 @@ public class TermOfService extends AppCompatActivity {
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         intent.putExtra("user",ble.getString("user"));
         intent.putExtra("passwd",ble.getString("passwd"));
+        intent.putExtra("view",0);
         startActivity(intent);
     }
 }

@@ -41,10 +41,6 @@ public class sendInfo {
 			}
 	}
 	
-	public void updateInfo(String name, String passwd, String Change) {  //update the user
-		UpdateUser u = new UpdateUser(); 
-		SqlR.update_user(String.format("%s",u.update(name,passwd)),getI_id_user(Change));
-	}
 
 	public void add_quiz(String email, String passwd, String quiz){ //add the quiz to the user
 		HashPasswd hp = new HashPasswd();

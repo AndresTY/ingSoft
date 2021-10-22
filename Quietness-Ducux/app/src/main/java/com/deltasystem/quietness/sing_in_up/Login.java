@@ -21,15 +21,18 @@ import java.io.OutputStreamWriter;
 public class Login extends AppCompatActivity {
     EditText _emailLoginText = null;
     EditText _passwordLoginText = null;
-    Button _signupButtonLogin = null;
+    Button _signupButtonLogin,_signUp_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
         _emailLoginText = findViewById(R.id.correo_login);
         _passwordLoginText = findViewById(R.id.password_login);
         _signupButtonLogin = findViewById(R.id.button_login);
+        _signUp_btn = findViewById(R.id.singup_btn_go);
+
         _signupButtonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -40,8 +43,25 @@ public class Login extends AppCompatActivity {
                 }
             }
         });
+
+        _signUp_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                go_signUp();
+            }
+        });
+
     }
 
+    private void go_signUp(){
+        String email = _emailLoginText.getText().toString();
+        String password = _passwordLoginText.getText().toString();
+        Intent intent = new Intent(Login.this, SignUp.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        intent.putExtra("user",email);
+        intent.putExtra("passwd",password);
+        startActivity(intent);
+    }
 
     private void open_menu(View v){
         String email = _emailLoginText.getText().toString();

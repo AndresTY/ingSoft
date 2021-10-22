@@ -44,16 +44,17 @@ public class SQLRequest {
 	}
 
 
-	public void update_user(String a, int userID) { //update users, correct that they are only for existing users (not showing "LOGIC" error).
+	public void update_user(String n_name,String n_username,String n_email, String n_gender,String o_user,String o_passwd ) { //update users, correct that they are only for existing users (not showing "LOGIC" error).
 		
-		String updateSql =String.format("UPDATE clients SET %s WHERE IDUser = %d;",a,userID);//SQL sentence
+		String updateSql =String.format("UPDATE clients SET name = \"%s\",username=\"%s\",email=\"%s\",gender='%s' WHERE email = \"%s\" AND passwd = \"%s\"; ",n_name,n_username,n_email,n_gender,o_user,o_passwd);//SQL sentence
 		Connection connection = null;//Connection initialize
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
+			StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+			StrictMode.setThreadPolicy(policy);
 			connection = DriverManager.getConnection(jdbcUrl,"sql3442286","qbM8XpxegR"); //Connect to DB
 			Statement statement = connection.createStatement();
-			int result = statement.executeUpdate(updateSql);// Execute SQL sentence
-			
+			int result = statement.executeUpdate(updateSql); // Execute SQL sentence
 			if(result>0) {
 				System.out.println("ROW UPDATE");
 			}else {

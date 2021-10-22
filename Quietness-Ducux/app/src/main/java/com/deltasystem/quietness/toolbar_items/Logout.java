@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.deltasystem.quietness.R;
 import com.deltasystem.quietness.activity_menu.Menu;
 import com.deltasystem.quietness.sing_in_up.Encuesta;
+import com.deltasystem.quietness.sing_in_up.Login;
 import com.deltasystem.quietness.sing_in_up.SignUp;
 import com.deltasystem.quietness.sing_in_up.TermOfService;
 import com.deltasystem.quietness.update.sendInfo;
@@ -85,7 +86,7 @@ public class Logout extends AppCompatActivity {
         ble = this.getIntent().getExtras();
         String user = ble.getString("user");
         String passwd = ble.getString("passwd");
-        Intent intent = new Intent(Logout.this, SignUp.class);
+        Intent intent = new Intent(Logout.this, Login.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         intent.putExtra("user",ble.getString("user"));
         intent.putExtra("passwd",ble.getString("passwd"));

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backsignup"
+    android:background="@drawable/back_login"
     tools:context=".sing_in_up.Login">
 
     <ImageView
@@ -13,23 +13,10 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.11"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.05"
         app:srcCompat="@drawable/logoi_2" />
-
-    <ImageView
-        android:id="@+id/quietness_login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.11"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo_login"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/title_2" />
 
     <ImageView
         android:id="@+id/inicio_sesion"
@@ -37,23 +24,47 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.11"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/quietness_login"
-        app:layout_constraintVertical_bias="0.050000012"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.211"
         app:srcCompat="@drawable/iniciosesion" />
 
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <Button
+        android:id="@+id/button_login"
+        android:layout_width="139dp"
+        android:layout_height="36dp"
+        android:background="@drawable/login_btn"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/averiaseriflibrebold"
+        android:text="entrar"
+        android:textColor="#4E9EDA"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.20"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inicio_sesion"
-        app:layout_constraintVertical_bias="0.04000002"
-        app:srcCompat="@drawable/sloganiniciosesion" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.601" />
+
+    <EditText
+        android:id="@+id/password_login"
+        android:layout_width="359dp"
+        android:layout_height="51dp"
+        android:background="@drawable/edittext_states"
+        android:ems="10"
+        android:fontFamily="@font/averiaseriflibrebold"
+        android:hint="******"
+        android:inputType="textPassword"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textColorHint="#f5f5dc"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.442"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.491" />
 
     <ImageView
         android:id="@+id/login_correo"
@@ -61,43 +72,31 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.11"
+        app:layout_constraintHorizontal_bias="0.075"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView7"
-        app:layout_constraintVertical_bias="0.13999999"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.315"
         app:srcCompat="@drawable/correo" />
 
     <EditText
         android:id="@+id/correo_login"
-        android:layout_width="217dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="96dp"
+        android:layout_width="360dp"
+        android:layout_height="56dp"
+        android:background="@drawable/edittext_states"
         android:ems="10"
         android:fontFamily="@font/averiaseriflibrebold"
+        android:hint="example@correo.com"
         android:inputType="textEmailAddress"
         android:textAlignment="center"
         android:textColor="@color/white"
+        android:textColorHint="#f5f5dc"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.45"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView7"
-        app:layout_constraintVertical_bias="0.115" />
-
-    <EditText
-        android:id="@+id/password_login"
-        android:layout_width="217dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="132dp"
-        android:ems="10"
-        android:fontFamily="@font/averiaseriflibrebold"
-        android:inputType="textPassword"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/correo_login"
-        app:layout_constraintVertical_bias="0.11" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.36" />
 
     <ImageView
         android:id="@+id/imageView15"
@@ -105,26 +104,55 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.12"
+        app:layout_constraintHorizontal_bias="0.083"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/correo_login"
-        app:layout_constraintVertical_bias="0.13999999"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.445"
         app:srcCompat="@drawable/password" />
 
     <Button
-        android:id="@+id/button_login"
-        android:layout_width="223dp"
-        android:layout_height="48dp"
-        android:backgroundTint="@color/white"
-        android:fontFamily="@font/averiaseriflibrebold"
-        android:text="Iniciar sesión"
-        android:textColor="@color/darkblue"
+        android:id="@+id/singup_btn_go"
+        android:layout_width="68dp"
+        android:layout_height="66dp"
+        android:background="@drawable/circular_buttons"
+        android:text="+"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="50sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.875"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView15"
-        app:layout_constraintVertical_bias="0.19999999" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.691" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Terminos y condiciones"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.888" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="301dp"
+        android:layout_height="34dp"
+        android:text="Universidad Sergio Arboleda"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.942" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

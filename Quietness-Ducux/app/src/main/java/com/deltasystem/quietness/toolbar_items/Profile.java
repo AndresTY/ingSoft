@@ -12,11 +12,12 @@ import com.deltasystem.quietness.Encrypt.HashPasswd;
 import com.deltasystem.quietness.R;
 import com.deltasystem.quietness.activity_menu.Menu;
 import com.deltasystem.quietness.sql.SQLRequest;
+import com.deltasystem.quietness.update.update_view;
 
 public class Profile extends AppCompatActivity {
 
     private TextView userTxt,nameTxt,emailTxt;
-    private Button btn_back;
+    private Button btn_edit, btn_back;
     private Bundle bdle = null;
 
     @Override
@@ -28,6 +29,19 @@ public class Profile extends AppCompatActivity {
         initialization_btn();
         info();
 
+        btn_edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                open_edit(view);
+            }
+        });
+
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                open_menu(view);
+            }
+        });
 
     }
 
@@ -35,17 +49,26 @@ public class Profile extends AppCompatActivity {
         userTxt = findViewById(R.id.username_text);
         nameTxt = findViewById(R.id.name_text);
         emailTxt = findViewById(R.id.email_Text);
+
     }
 
     private void initialization_btn(){
-       // btn_back = (Button) findViewById(R.id.button2);
+        btn_back = (Button) findViewById(R.id.backk_btn);
+        btn_edit = findViewById(R.id.edit_btn);
     }
 
     private void open_menu(View v){
         bdle = this.getIntent().getExtras();
-        String user = bdle.getString("user");
-        String passwd = bdle.getString("passwd");
         Intent intent = new Intent(Profile.this, Menu.class);
+        intent.putExtra("user",bdle.getString("user"));
+        intent.putExtra("passwd",bdle.getString("passwd"));
+        startActivity(intent);
+    }
+
+    private void open_edit(View v){
+        bdle = this.getIntent().getExtras();
+
+        Intent intent = new Intent(Profile.this, update_view.class);
         intent.putExtra("user",bdle.getString("user"));
         intent.putExtra("passwd",bdle.getString("passwd"));
         startActivity(intent);

@@ -53,6 +53,7 @@ public class settings extends AppCompatActivity {
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         intent.putExtra("user",ble.getString("user"));
         intent.putExtra("passwd",ble.getString("passwd"));
+        intent.putExtra("view",1);
         startActivity(intent);
     }
     private void open_terms_of_service(){

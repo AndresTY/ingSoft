@@ -9,6 +9,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import com.deltasystem.quietness.R;
 import com.deltasystem.quietness.activity_menu.Menu;
+import com.deltasystem.quietness.toolbar_items.settings;
 import com.deltasystem.quietness.update.sendInfo;
 
 public class Encuesta extends AppCompatActivity {
@@ -70,13 +71,21 @@ public class Encuesta extends AppCompatActivity {
     //button action
     public void onClickLoad(View view){
         String quiz =Load();
+        Intent intent = null;
         bdle = this.getIntent().getExtras();
         //extracts user information
         String user = bdle.getString("user");
         String passwd = bdle.getString("passwd");
-        Intent intent = new Intent(Encuesta.this, Menu.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        Load_quiz(quiz);
+        int return_view = bdle.getInt("view");
+        if(return_view==0) {
+            intent = new Intent(Encuesta.this, Menu.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            Load_quiz(quiz);
+        }else if(return_view==1){
+            intent = new Intent(Encuesta.this, settings.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            Load_quiz(quiz);
+        }
         //pass the data to another view
         intent.putExtra("user",bdle.getString("user"));
         intent.putExtra("passwd",bdle.getString("passwd"));

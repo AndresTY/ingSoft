@@ -25,12 +25,12 @@ import java.io.OutputStreamWriter;
 public class SignUp extends AppCompatActivity {
     Spinner opciones;
     EditText _nameText = null;
-    EditText _lastnameText = null;
     EditText _userText = null;
     EditText _emailText = null;
     EditText _passwordText = null;
     EditText _reEnterPasswordText = null;
     Button _signupButton = null;
+    Button _back_login;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,36 +63,42 @@ public class SignUp extends AppCompatActivity {
                 }
             }
         });
+
+        _back_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onClickLogin(view);
+            }
+        });
+
     }
 
     private void get_info_boxes(){
         _nameText = findViewById(R.id.nombre);
-        _lastnameText = findViewById(R.id.apellido);
         _userText = findViewById(R.id.usuario);
         _emailText = findViewById(R.id.correo);
         _passwordText = findViewById(R.id.password_id);
         _reEnterPasswordText = findViewById(R.id.checkpassw);
         _signupButton = findViewById(R.id.button);
+        _back_login = findViewById(R.id.back_login_btn);
     }
 
     public void signup(View v) throws IOException {
 
         String name = _nameText.getText().toString();
-        String lastName = _lastnameText.getText().toString();
         String user = _userText.getText().toString();
         String email = _emailText.getText().toString();
         String password = _passwordText.getText().toString();
         String re_password = _reEnterPasswordText.getText().toString();
 
-        if (!validate(name,lastName,user,email,password,re_password)) {
+        if (!validate(name,user,email,password,re_password)) {
             onSignupFailed();
             return;
         }else {
 
             Register register = new Register();
             char genre = opciones.getSelectedItem().toString().charAt(0);
-            String nombreCompleto = name + " " + lastName;
-            register.register_user_manual(nombreCompleto, user, email, password, genre, " ", " ");
+            register.register_user_manual(name, user, email, password, genre, " ", " ");
             onSignupSuccess();
             onClickRegister(v);
 
@@ -110,7 +116,7 @@ public class SignUp extends AppCompatActivity {
         _signupButton.setEnabled(true);
     }
 
-    public boolean validate(String name,String lastname,String user,String email,String password,String re_password) {
+    public boolean validate(String name,String user,String email,String password,String re_password) {
         boolean valid = true;
 
         if (name.isEmpty() || name.length() < 3) {
@@ -118,13 +124,6 @@ public class SignUp extends AppCompatActivity {
             valid = false;
         } else {
             _nameText.setError(null);
-        }
-
-        if (lastname.isEmpty()) {
-            _lastnameText.setError("Introduce un apellido");
-            valid = false;
-        } else {
-            _lastnameText.setError(null);
         }
 
         if (email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
@@ -160,6 +159,7 @@ public class SignUp extends AppCompatActivity {
 
     public void onClickLogin(View view){
         Intent intent = new Intent(SignUp.this, Login.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
     public void onClickRegister(View view){

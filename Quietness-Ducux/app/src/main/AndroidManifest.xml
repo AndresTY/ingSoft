@@ -26,6 +26,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
+            android:name=".update.update_view"
+            android:exported="true" />
+        <activity
             android:name=".toolbar_items.Politicas"
             android:exported="true" />
         <activity
@@ -101,6 +104,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <receiver
             android:name=".alarma.AlarmReceiver"
             android:enabled="true" />
@@ -128,8 +132,6 @@
                 <action android:name="android.intent.action.ACTION_TIME_CHANGED" />
             </intent-filter>
         </receiver>
-
-
     </application>
 
 </manifest>
