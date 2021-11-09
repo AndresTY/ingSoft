@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.deltasystem.quietness.R;
 import com.deltasystem.quietness.sql.SQLRequest;
 
+import java.util.HashMap;
 import java.util.Locale;
 
 public class Stories extends AppCompatActivity {
@@ -65,8 +66,39 @@ public class Stories extends AppCompatActivity {
     }
 
     private void get_txt(){
+        ble = this.getIntent().getExtras();
+        int aux=0;
+        HashMap<String, Integer> point=new HashMap<String, Integer>() {{
+            put("Playa", 1);
+            put("Bosque", 2);
+            put("Montana", 3);
+            put("Ciudad", 4);
+            put("Familia", 1);
+            put("Amigos", 2);
+            put("Mascota", 3);
+            put("Pareja", 4);
+            put("Leon", 1);
+            put("Aguila", 2);
+            put("Lobo", 3);
+            put("Tiburon", 4);
+            put("Mono", 5);
+            put("Leer", 1);
+            put("Audio-visuales", 2);
+            put("Deporte", 3);
+            put("Fiesta", 4);
+        }};;
+        String user = ble.getString("user");
+        String passwd = ble.getString("passwd");
         SQLRequest sql = new SQLRequest();
-        String hist = sql.get_hist();
+        String inf[] = sql.get_info("clients",user,passwd);
+
+        String quiz[] = inf[4].split(";");
+
+        for(String a: quiz){
+            aux+= point.get(a);
+        }
+
+        String hist = sql.get_hist(aux);
         txt.setText(hist);
     }
 

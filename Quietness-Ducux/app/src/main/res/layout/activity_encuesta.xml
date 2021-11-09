@@ -4,14 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#da4e9e"
-    tools:context=".Encuesta">
+    android:background="@drawable/cieloo"
+    tools:context=".Encuesta"
+    >
+
 
     <TextView
         android:id="@+id/textTemp"
         android:layout_width="171dp"
         android:layout_height="50dp"
-        android:text="@string/TitleQuiz"
+        android:text="@string/TitleEncuesta"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="@color/white"

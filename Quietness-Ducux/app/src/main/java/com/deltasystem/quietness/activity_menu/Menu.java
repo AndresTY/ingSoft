@@ -1,5 +1,6 @@
 package com.deltasystem.quietness.activity_menu;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -11,7 +12,11 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.deltasystem.quietness.drawer.Drawer;
+import com.deltasystem.quietness.drawer.IDrawer;
 import com.deltasystem.quietness.sueno.Main_Activity_Sueno;
 import com.deltasystem.quietness.toolbar_items.AboutUs;
 import com.deltasystem.quietness.toolbar_items.Logout;
@@ -19,8 +24,11 @@ import com.deltasystem.quietness.toolbar_items.Profile;
 import com.deltasystem.quietness.R;
 import com.deltasystem.quietness.toolbar_items.settings;
 
-public class Menu extends AppCompatActivity {
+public class Menu extends AppCompatActivity implements IDrawer {
 
+    DrawerLayout drawerLayout;
+
+    private Button btn_profile;
     private ImageButton btnMusic,btnSleep,btnCalendar,btnStory,btn_tips;
     private Bundle ble=null;
     @Override
@@ -61,7 +69,12 @@ public class Menu extends AppCompatActivity {
                 open_Tips();
             }
         });
-
+        btn_profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                open_profile();
+            }
+        });
     }
 
     @Override
@@ -87,6 +100,63 @@ public class Menu extends AppCompatActivity {
             open_profile();
         }
         return true;
+    }
+
+    public void ClickMenu(View view){
+        // Abrir drawer
+        openDrawer(drawerLayout);
+    }
+
+    public void openDrawer(DrawerLayout drawerLayout) {
+        //Abrir Drawer Layout
+        drawerLayout.openDrawer(GravityCompat.START);
+    }
+
+    public void ClickLogo(View view){
+        //Cerrar drawer
+        closeDrawer(drawerLayout);
+    }
+
+    public void closeDrawer(DrawerLayout drawerLayout) {
+        //Cerrar Drawer Layout
+        if(drawerLayout.isDrawerOpen(GravityCompat.START)){
+            //Si se encuentra abierto se cierra
+            drawerLayout.closeDrawer(GravityCompat.START);
+        }
+    }
+
+    public void ClickHome(View view){
+        redireccionar(this, Menu.class);
+    }
+
+    public void ClickMusica(View view){
+        redireccionar(this, Musica.class);
+    }
+
+    public void ClickCalendario(View view) {
+        redireccionar(this, CalendarView.class);
+    }
+
+    public void ClickTips(View view){
+        redireccionar(this, Tips.class);
+    }
+
+    public void ClickSettings(View view) {
+        redireccionar(this, settings.class);
+    }
+
+    public void ClickSueno(View view){
+        redireccionar(this, Main_Activity_Sueno.class);
+    }
+
+    public void redireccionar(Activity activity, Class aClass) {
+        ble = this.getIntent().getExtras();
+        String user = ble.getString("user");
+        String passwd = ble.getString("passwd");
+        Intent intent = new Intent(activity, aClass);
+        intent.putExtra("user",ble.getString("user"));
+        intent.putExtra("passwd",ble.getString("passwd"));
+        startActivity(intent);
     }
 
     private void open_profile (){
@@ -191,7 +261,13 @@ public class Menu extends AppCompatActivity {
         btnSleep = (ImageButton) findViewById(R.id.BtnSleep);
         btnStory = (ImageButton) findViewById(R.id.BtnHistoria);
         btn_tips = (ImageButton) findViewById(R.id.Btn_tips);
+        btn_profile = findViewById(R.id.btn_Profile);
+        drawerLayout = findViewById(R.id.drawer_layout);
     }
 
-
+    @Override
+    protected void onPause() {
+        super.onPause();
+        closeDrawer(drawerLayout);
+    }
 }

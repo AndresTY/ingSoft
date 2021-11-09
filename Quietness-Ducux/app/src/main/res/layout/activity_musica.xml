@@ -1,115 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_xml"
+    android:id="@+id/drawer_layout"
+    android:animateLayoutChanges="true"
+    android:background="@drawable/cieloo"
     tools:context=".activity_menu.Musica">
 
-    <TextView
-        android:id="@+id/SongPlaying"
-        android:layout_width="217dp"
-        android:layout_height="34dp"
-        android:background="@drawable/song_txt"
-        android:gravity="center"
-        android:text="NONE"
-        android:textAlignment="center"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.14" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/song5"
-        android:layout_width="95dp"
-        android:layout_height="93dp"
-        android:background="@drawable/waves"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.24"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/song1"
-        app:layout_constraintVertical_bias="0.109"
-        tools:ignore="SpeakableTextPresentCheck" />
+        <include
+            layout="@layout/main_toolbar" />
 
-    <Button
-        android:id="@+id/song1"
-        android:layout_width="96dp"
-        android:layout_height="92dp"
-        android:background="@drawable/cascade"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.244"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.295"
-        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+        <TextView
+            android:id="@+id/SongPlaying"
+            android:layout_width="217dp"
+            android:layout_height="34dp"
+            android:background="@drawable/song_txt"
+            android:gravity="center"
+            android:text="NONE"
+            android:textAlignment="center"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.14" />
 
-    <Button
-        android:id="@+id/song6"
-        android:layout_width="91dp"
-        android:layout_height="90dp"
-        android:background="@drawable/air"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.463"
-        app:layout_constraintStart_toEndOf="@+id/song5"
-        app:layout_constraintTop_toBottomOf="@+id/song4"
-        app:layout_constraintVertical_bias="0.099"
-        tools:ignore="SpeakableTextPresentCheck" />
+        <Button
+            android:id="@+id/song5"
+            android:layout_width="95dp"
+            android:layout_height="93dp"
+            android:background="@drawable/waves"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/song1"
+            app:layout_constraintVertical_bias="0.109"
+            tools:ignore="SpeakableTextPresentCheck" />
 
-    <Button
-        android:id="@+id/song7"
-        android:layout_width="97dp"
-        android:layout_height="91dp"
-        android:background="@drawable/whale"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.242"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/song5"
-        app:layout_constraintVertical_bias="0.231"
-        tools:ignore="SpeakableTextPresentCheck" />
+        <Button
+            android:id="@+id/song1"
+            android:layout_width="96dp"
+            android:layout_height="92dp"
+            android:background="@drawable/cascade"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.244"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.295"
+            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
-    <Button
-        android:id="@+id/song4"
-        android:layout_width="94dp"
-        android:layout_height="90dp"
-        android:background="@drawable/rain"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.465"
-        app:layout_constraintStart_toEndOf="@+id/song1"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.294"
-        tools:ignore="SpeakableTextPresentCheck" />
+        <Button
+            android:id="@+id/song6"
+            android:layout_width="91dp"
+            android:layout_height="90dp"
+            android:background="@drawable/air"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.463"
+            app:layout_constraintStart_toEndOf="@+id/song5"
+            app:layout_constraintTop_toBottomOf="@+id/song4"
+            app:layout_constraintVertical_bias="0.099"
+            tools:ignore="SpeakableTextPresentCheck" />
 
-    <Button
-        android:id="@+id/song3"
-        android:layout_width="94dp"
-        android:layout_height="91dp"
-        android:background="@drawable/empty"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.465"
-        app:layout_constraintStart_toEndOf="@+id/song7"
-        app:layout_constraintTop_toBottomOf="@+id/song6"
-        app:layout_constraintVertical_bias="0.239"
-        tools:ignore="SpeakableTextPresentCheck" />
+        <Button
+            android:id="@+id/song7"
+            android:layout_width="97dp"
+            android:layout_height="91dp"
+            android:background="@drawable/whale"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.242"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/song5"
+            app:layout_constraintVertical_bias="0.231"
+            tools:ignore="SpeakableTextPresentCheck" />
 
-    <Button
-        android:id="@+id/reset"
-        android:layout_width="78dp"
-        android:layout_height="73dp"
-        android:background="@drawable/back_white_icon"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.048"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.065" />
+        <Button
+            android:id="@+id/song4"
+            android:layout_width="94dp"
+            android:layout_height="90dp"
+            android:background="@drawable/rain"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.465"
+            app:layout_constraintStart_toEndOf="@+id/song1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.294"
+            tools:ignore="SpeakableTextPresentCheck" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/song3"
+            android:layout_width="94dp"
+            android:layout_height="91dp"
+            android:background="@drawable/empty"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.465"
+            app:layout_constraintStart_toEndOf="@+id/song7"
+            app:layout_constraintTop_toBottomOf="@+id/song6"
+            app:layout_constraintVertical_bias="0.239"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <Button
+            android:id="@+id/reset"
+            android:layout_width="78dp"
+            android:layout_height="73dp"
+            android:background="@drawable/back_white_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.048"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.065" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/white">
+
+        <include layout="@layout/main_nav_drawer" />
+
+    </RelativeLayout>
+
+
+
+</androidx.drawerlayout.widget.DrawerLayout>

@@ -14,14 +14,14 @@ import java.sql.Statement;
 public class sendInfo {
 	//URGENTE: generalize connection SQL
 	private SQLRequest SqlR= new SQLRequest();
-	String jdbcUrl = "jdbc:mysql://sql3.freesqldatabase.com:3306/sql3442286"; //DataBase DIR
+	String jdbcUrl = "jdbc:mysql://sql5.freesqldatabase.com:3306/sql5446905"; //DataBase DIR
 	
 	private int getI_id_user(String a) { //get user id
 		String sql = String.format("SELECT row FROM users WHERE email==\"%s\" OR name==\"%s\"",a,a);
 		Connection connection = null;
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			connection = DriverManager.getConnection(jdbcUrl,"sql3442286","qbM8XpxegR"); //Connect to DB
+			connection = DriverManager.getConnection(jdbcUrl,"sql5446905","widbzrH47x"); //Connect to DB
 			Statement statement = connection.createStatement();
 			ResultSet result = statement.executeQuery(sql);
 			int user = result.getInt("row");
@@ -51,7 +51,7 @@ public class sendInfo {
 			Class.forName("com.mysql.jdbc.Driver");
 			StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
 			StrictMode.setThreadPolicy(policy);
-			connection = DriverManager.getConnection(jdbcUrl,"sql3442286","qbM8XpxegR"); //Connect to DB
+			connection = DriverManager.getConnection(jdbcUrl,"sql5446905","widbzrH47x"); //Connect to DB
 			Statement statement = connection.createStatement();
 			result = statement.executeUpdate(sql);
 		} catch (SQLException | ClassNotFoundException e){
@@ -76,7 +76,7 @@ public class sendInfo {
 			Class.forName("com.mysql.jdbc.Driver");
 			StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
 			StrictMode.setThreadPolicy(policy);
-			connection = DriverManager.getConnection(jdbcUrl,"sql3442286","qbM8XpxegR"); //Connect to DB
+			connection = DriverManager.getConnection(jdbcUrl,"sql5446905","widbzrH47x"); //Connect to DB
 			Statement statement = connection.createStatement();
 			result = statement.executeUpdate(sql);
 		} catch (SQLException | ClassNotFoundException e){
@@ -100,7 +100,7 @@ public class sendInfo {
 		String aux = "";
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			connection = DriverManager.getConnection(jdbcUrl,"sql3442286","qbM8XpxegR"); //Connect to DB
+			connection = DriverManager.getConnection(jdbcUrl,"sql5446905","widbzrH47x"); //Connect to DB
 			Statement statement = connection.createStatement();
 			result = statement.executeQuery(sql);
 			while (result.next()) { //extracts the information from the database

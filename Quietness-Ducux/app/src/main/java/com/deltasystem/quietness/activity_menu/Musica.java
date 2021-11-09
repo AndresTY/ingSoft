@@ -4,7 +4,10 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.core.graphics.drawable.DrawableCompat;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
@@ -19,8 +22,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.deltasystem.quietness.R;
+import com.deltasystem.quietness.drawer.IDrawer;
+import com.deltasystem.quietness.sueno.Main_Activity_Sueno;
+import com.deltasystem.quietness.toolbar_items.Profile;
+import com.deltasystem.quietness.toolbar_items.settings;
 
-public class Musica extends AppCompatActivity {
+public class Musica extends AppCompatActivity implements IDrawer {
 
     private Button _bt1;
     private Button _bt3;
@@ -32,6 +39,8 @@ public class Musica extends AppCompatActivity {
     private MediaPlayer mp;
     private Bundle ble =null;
     private TextView song_txt;
+    DrawerLayout drawerLayout;
+    private Button btn_profile;
 
     MediaPlayer vectmp [] = new MediaPlayer[6];
 
@@ -95,6 +104,13 @@ public class Musica extends AppCompatActivity {
             }
         });
 
+        btn_profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                open_profile();
+            }
+        });
+
     }
 
     private void initialize(){
@@ -107,6 +123,8 @@ public class Musica extends AppCompatActivity {
         _bt7 = (Button) findViewById(R.id.song7);
         _reset = (Button) findViewById(R.id.reset);
         song_txt = findViewById(R.id.SongPlaying);
+        btn_profile = findViewById(R.id.btn_Profile);
+        drawerLayout = findViewById(R.id.drawer_layout);
 
     }
 
@@ -186,4 +204,71 @@ public class Musica extends AppCompatActivity {
 
     }
 
+    private void open_profile (){
+        ble = this.getIntent().getExtras();
+        String user = ble.getString("user");
+        String passwd = ble.getString("passwd");
+        Intent intent = new Intent(this, Profile.class);
+        intent.putExtra("user",ble.getString("user"));
+        intent.putExtra("passwd",ble.getString("passwd"));
+        startActivity(intent);
+    }
+
+    public void ClickMenu(View view){
+        // Abrir drawer
+        openDrawer(drawerLayout);
+    }
+
+    public void openDrawer(DrawerLayout drawerLayout) {
+        //Abrir Drawer Layout
+        drawerLayout.openDrawer(GravityCompat.START);
+    }
+
+    public void ClickLogo(View view){
+        //Cerrar drawer
+        closeDrawer(drawerLayout);
+    }
+
+    public void closeDrawer(DrawerLayout drawerLayout) {
+        //Cerrar Drawer Layout
+        if(drawerLayout.isDrawerOpen(GravityCompat.START)){
+            //Si se encuentra abierto se cierra
+            drawerLayout.closeDrawer(GravityCompat.START);
+        }
+    }
+
+    public void ClickHome(View view){
+        redireccionar(this, Menu.class);
+    }
+
+    public void ClickMusica(View view){
+        redireccionar(this, Musica.class);
+    }
+
+    @Override
+    public void ClickCalendario(View view) {
+        redireccionar(this, CalendarView.class);
+    }
+
+    public void ClickTips(View view){
+        redireccionar(this, Tips.class);
+    }
+
+    public void ClickSettings(View view) {
+        redireccionar(this, settings.class);
+    }
+
+    public void ClickSueno(View view){
+        redireccionar(this, Main_Activity_Sueno.class);
+    }
+
+    public void redireccionar(Activity activity, Class aClass) {
+        ble = this.getIntent().getExtras();
+        String user = ble.getString("user");
+        String passwd = ble.getString("passwd");
+        Intent intent = new Intent(activity, aClass);
+        intent.putExtra("user",ble.getString("user"));
+        intent.putExtra("passwd",ble.getString("passwd"));
+        startActivity(intent);
+    }
 }
