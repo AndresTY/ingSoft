@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/cieloo"
-    tools:context=".Encuesta"
-    >
+    android:background="@drawable/cieloo">
 
 
     <TextView
@@ -18,236 +16,247 @@
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="34sp"
+        android:fontFamily="@font/zenkakugothicnewmedium"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.50"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.018" />
 
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="361dp"
-        android:layout_height="534dp"
+        android:layout_width="354dp"
+        android:layout_height="640dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.812">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/Q1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/Q1"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
 
             <RadioGroup
                 android:id="@+id/Q1RG"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="343dp"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="1dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.588"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:srcCompat="@drawable/encu1" />
 
                 <RadioButton
                     android:id="@+id/Q11"
-                    style="@android:style/Widget.Holo.CompoundButton.RadioButton"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:button="@drawable/select_icon_btn"
-                    android:text="@string/Q11" />
+                    android:text="@string/Q11"
+                    android:buttonTint="@color/white"
+                    android:textColor="@color/white" />
 
                 <RadioButton
                     android:id="@+id/Q12"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:button="@drawable/select_icon_btn"
-                    android:text="@string/Q12" />
+                    android:text="@string/Q12"
+                    android:buttonTint="@color/white"
+                    android:textColor="@color/white" />
 
                 <RadioButton
                     android:id="@+id/Q13"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:button="@drawable/select_icon_btn"
-                    android:text="@string/Q13" />
+                    android:text="@string/Q13"
+                    android:buttonTint="@color/white"
+                    android:textColor="@color/white" />
 
                 <RadioButton
                     android:id="@+id/Q14"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:button="@drawable/select_icon_btn"
-                    android:text="@string/Q14" />
-            </RadioGroup>
+                    android:text="@string/Q14"
+                    android:buttonTint="@color/white"
+                    android:textColor="@color/white" />
 
-            <TextView
-                android:id="@+id/Q2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/Q2"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
+            </RadioGroup>
 
             <RadioGroup
                 android:id="@+id/Q2RG"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_width="364dp"
+                android:layout_height="207dp"
+                android:paddingTop="2sp">
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="347dp"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="6dp"
+                    app:srcCompat="@drawable/encu2" />
 
                 <RadioButton
                     android:id="@+id/Q21"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:button="@drawable/select_icon_btn"
-                    android:text="@string/Q21" />
+                    android:text="@string/Q21"
+                    android:buttonTint="@color/white"
+                    android:textColor="@color/white" />
 
                 <RadioButton
                     android:id="@+id/Q22"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:button="@drawable/select_icon_btn"
-                    android:text="@string/Q22" />
+                    android:text="@string/Q22"
+                    android:buttonTint="@color/white"
+                    android:textColor="@color/white" />
 
                 <RadioButton
                     android:id="@+id/Q23"
-                    android:layout_width="match_parent"
+                    android:layout_width="352dp"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:button="@drawable/select_icon_btn"
-                    android:text="@string/Q23" />
+                    android:text="@string/Q23"
+                    android:buttonTint="@color/white"
+                    android:textColor="@color/white" />
 
                 <RadioButton
                     android:id="@+id/Q24"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:button="@drawable/select_icon_btn"
-                    android:text="@string/Q24" />
-            </RadioGroup>
+                    android:layout_marginBottom="3dp"
+                    android:text="@string/Q24"
+                    android:buttonTint="@color/white"
+                    android:textColor="@color/white" />
 
-            <TextView
-                android:id="@+id/Q3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/Q3"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
+
+
+            </RadioGroup>
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="350dp"
+                android:layout_height="48dp"
+                app:srcCompat="@drawable/encu3" />
 
             <RadioGroup
                 android:id="@+id/Q3RG"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="171dp">
 
                 <RadioButton
                     android:id="@+id/Q31"
-                    android:layout_width="match_parent"
+                    android:layout_width="318dp"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:button="@drawable/select_icon_btn"
-                    android:text="@string/Q31" />
+                    android:text="@string/Q31"
+                    android:buttonTint="@color/white"
+                    android:textColor="@color/white" />
 
                 <RadioButton
                     android:id="@+id/Q32"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:button="@drawable/select_icon_btn"
-                    android:text="@string/Q32" />
+                    android:text="@string/Q32"
+                    android:buttonTint="@color/white"
+                    android:textColor="@color/white" />
 
                 <RadioButton
                     android:id="@+id/Q33"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:button="@drawable/select_icon_btn"
-                    android:text="@string/Q33" />
+                    android:text="@string/Q33"
+                    android:buttonTint="@color/white"
+                    android:textColor="@color/white" />
 
                 <RadioButton
                     android:id="@+id/Q34"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:button="@drawable/select_icon_btn"
-                    android:text="@string/Q34" />
+                    android:text="@string/Q34"
+                    android:buttonTint="@color/white"
+                    android:textColor="@color/white" />
 
                 <RadioButton
                     android:id="@+id/Q35"
-                    android:layout_width="match_parent"
+                    android:layout_width="311dp"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:button="@drawable/select_icon_btn"
-                    android:text="@string/Q35" />
+                    android:text="@string/Q35"
+                    android:buttonTint="@color/white"
+                    android:textColor="@color/white" />
+
+
             </RadioGroup>
-
-            <TextView
-                android:id="@+id/Q4"
+            <ImageView
+                android:id="@+id/imageView7"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/Q4"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
+                android:layout_height="51dp"
 
+                app:srcCompat="@drawable/encu4" />
             <RadioGroup
                 android:id="@+id/Q4RG"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.39"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="12">
 
                 <RadioButton
                     android:id="@+id/Q41"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:button="@drawable/select_icon_btn"
                     android:text="@string/Q41"
+                    android:buttonTint="@color/white"
                     android:textColor="@color/white" />
 
                 <RadioButton
                     android:id="@+id/Q42"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:button="@drawable/select_icon_btn"
-                    android:text="@string/Q42" />
+                    android:text="@string/Q42"
+                    android:buttonTint="@color/white"
+                    android:textColor="@color/white" />
 
                 <RadioButton
                     android:id="@+id/Q43"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:button="@drawable/select_icon_btn"
-                    android:text="@string/Q43" />
+                    android:text="@string/Q43"
+                    android:buttonTint="@color/white"
+                    android:textColor="@color/white" />
 
                 <RadioButton
                     android:id="@+id/Q44"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:button="@drawable/select_icon_btn"
-                    android:text="@string/Q44" />
+                    android:text="@string/Q44"
+                    android:buttonTint="@color/white"
+                    android:textColor="@color/white" />
 
             </RadioGroup>
-
+            <Button
+                android:id="@+id/LoadData"
+                style="@android:style/Widget.Material.Light.Button.Small"
+                android:layout_width="171dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:background="@drawable/botonsignup"
+                android:fontFamily="@font/zenkakugothicnewmedium"
+                android:text="Cargar respuestas"
+                android:textColor="@color/darkblue"
+                />
         </LinearLayout>
     </ScrollView>
 
-    <Button
-        android:id="@+id/LoadData"
-        style="@android:style/Widget.Material.Light.Button.Small"
-        android:layout_width="63dp"
-        android:layout_height="54dp"
-        android:background="@drawable/circular_buttons"
-        android:onClick="Lo"
-        android:text="Cargar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textTemp"
-        app:layout_constraintVertical_bias="0.959" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

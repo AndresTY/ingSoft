@@ -4,18 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/cieloo"
     tools:context=".activity_menu.Stories">
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="178dp"
         android:layout_height="47dp"
-        android:text="STORIES"
+        android:text="Historias"
         android:textAlignment="center"
+        android:textColor="@color/white"
+        android:fontFamily="@font/zenkakugothicnewmedium"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.592"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.027" />
@@ -25,47 +28,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/back_icon"
+        android:backgroundTint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.058"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.027" />
-
-    <Button
-        android:id="@+id/Play_story"
-        android:layout_width="67dp"
-        android:layout_height="58dp"
-        android:background="@android:drawable/ic_media_play"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.878" />
-
-    <Button
-        android:id="@+id/stop_story"
-        android:layout_width="70dp"
-        android:layout_height="58dp"
-        android:background="@android:drawable/ic_media_pause"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.818"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.878" />
-
-    <Button
-        android:id="@+id/refresh_hist"
-        android:layout_width="70dp"
-        android:layout_height="58dp"
-        android:background="@drawable/ic_refresh"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.656"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976" />
 
     <ScrollView
         android:id="@+id/scrollView3"
@@ -85,56 +54,110 @@
             <TextView
                 android:id="@+id/ReadTxt"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="1. De mi abuelo Vero: el buen carácter y la serenidad. 2. De la reputación y memoria legadas por mi progenitor: el carácter discreto y viril. 3. De mi madre: el respeto a los dioses, la generosidad y la abstención no sólo de obrar mal, sino incluso de incurrir en semejante pensamiento; más todavía, la frugalidad en el régimen de vida y el alejamiento del modo de vivir propio de los ricos. 4. De mi bisabuelo: el no haber frecuentado las escuelas  públicas y haberme servido de buenos maestros en casa, y el haber comprendido que, para tales fines, es preciso gastar con largueza. 5. De mi preceptor: el no haber sido de la facción de los Verdes ni de los Azules, ni partidario de los parinularios ni de los escutarios1; el soportar las fatigas y tener pocas necesidades; el trabajo con esfuerzo personal y la abstención de excesivas tareas, y la desfavorable acogida a la calumnia" />
+                android:layout_height="match_parent"
+                android:fontFamily="@font/zenkakugothicnewmedium"
+                android:text="1. De mi abuelo Vero: el buen carácter y la serenidad. 2. De la reputación y memoria legadas por mi progenitor: el carácter discreto y viril. 3. De mi madre: el respeto a los dioses, la generosidad y la abstención no sólo de obrar mal, sino incluso de incurrir en semejante pensamiento; más todavía, la frugalidad en el régimen de vida y el alejamiento del modo de vivir propio de los ricos. 4. De mi bisabuelo: el no haber frecuentado las escuelas  públicas y haberme servido de buenos maestros en casa, y el haber comprendido que, para tales fines, es preciso gastar con largueza. 5. De mi preceptor: el no haber sido de la facción de los Verdes ni de los Azules, ni partidario de los parinularios ni de los escutarios1; el soportar las fatigas y tener pocas necesidades; el trabajo con esfuerzo personal y la abstención de excesivas tareas, y la desfavorable acogida a la calumnia"
+                android:textSize="17dp"
+                android:textColor="@color/white" />
+
         </LinearLayout>
     </ScrollView>
-
-    <SeekBar
-        android:id="@+id/pitch"
-        android:layout_width="118dp"
-        android:layout_height="27dp"
-        android:progress="50"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.067"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.869" />
 
     <SeekBar
         android:id="@+id/spped"
         android:layout_width="119dp"
         android:layout_height="25dp"
         android:progress="50"
+        android:progressTint="@color/white"
+        android:thumbTint="#86575656"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.067"
+        app:layout_constraintHorizontal_bias="0.263"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.944" />
+        app:layout_constraintVertical_bias="0.954" />
+
+    <SeekBar
+        android:id="@+id/pitch"
+        android:layout_width="118dp"
+        android:layout_height="27dp"
+        android:progress="50"
+        android:progressTint="@color/white"
+        android:secondaryProgressTint="@color/white"
+        android:thumbTint="#86575656"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.696"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.954"
+        app:tickMarkTint="@color/white" />
 
     <TextView
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="pitch"
+        android:fontFamily="@font/zenkakugothicnewmedium"
+        android:text="Tonalidad"
+        android:textColor="@color/white"
+        android:textSize="17dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.136"
+        app:layout_constraintHorizontal_bias="0.662"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.837" />
+        app:layout_constraintVertical_bias="0.921" />
 
     <TextView
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="speed"
+        android:fontFamily="@font/zenkakugothicnewmedium"
+        android:text="Velocidad"
+        android:textSize="17dp"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.136"
+        app:layout_constraintHorizontal_bias="0.301"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.911" />
+        app:layout_constraintVertical_bias="0.921" />
+
+    <Button
+        android:id="@+id/refresh_hist"
+        android:layout_width="70dp"
+        android:layout_height="58dp"
+        android:background="@drawable/ic_refresh"
+        android:backgroundTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.774"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.864" />
+
+    <Button
+        android:id="@+id/Play_story"
+        android:layout_width="67dp"
+        android:layout_height="58dp"
+        android:background="@android:drawable/ic_media_play"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.864" />
+
+    <Button
+        android:id="@+id/stop_story"
+        android:layout_width="70dp"
+        android:layout_height="58dp"
+        android:background="@android:drawable/ic_media_pause"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.208"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.864" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

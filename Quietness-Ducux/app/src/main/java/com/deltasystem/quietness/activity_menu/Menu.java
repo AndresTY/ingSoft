@@ -19,6 +19,7 @@ import com.deltasystem.quietness.drawer.Drawer;
 import com.deltasystem.quietness.drawer.IDrawer;
 import com.deltasystem.quietness.sueno.Main_Activity_Sueno;
 import com.deltasystem.quietness.toolbar_items.AboutUs;
+import com.deltasystem.quietness.toolbar_items.BugReport;
 import com.deltasystem.quietness.toolbar_items.Logout;
 import com.deltasystem.quietness.toolbar_items.Profile;
 import com.deltasystem.quietness.R;
@@ -148,6 +149,12 @@ public class Menu extends AppCompatActivity implements IDrawer {
     public void ClickSueno(View view){
         redireccionar(this, Main_Activity_Sueno.class);
     }
+    public void ClickError(View view){
+        redireccionar(this, BugReport.class);
+    }
+    public void ClickLogout(View view){
+        redireccionar(this, Logout.class);
+    }
 
     public void redireccionar(Activity activity, Class aClass) {
         ble = this.getIntent().getExtras();
@@ -248,6 +255,7 @@ public class Menu extends AppCompatActivity implements IDrawer {
         intent.putExtra("passwd",ble.getString("passwd"));
         startActivity(intent);
     }
+
 
     private void toolbar_config(){
         Toolbar toolbar = findViewById(R.id.toolbar);

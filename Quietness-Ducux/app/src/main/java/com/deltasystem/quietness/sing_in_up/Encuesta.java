@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
+
 import com.deltasystem.quietness.R;
 import com.deltasystem.quietness.activity_menu.Menu;
 import com.deltasystem.quietness.toolbar_items.settings;
@@ -119,4 +121,5 @@ public class Encuesta extends AppCompatActivity {
         q44 = (RadioButton) findViewById(R.id.Q44);
 
     }
+
 }

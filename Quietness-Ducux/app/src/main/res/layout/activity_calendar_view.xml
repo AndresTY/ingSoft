@@ -28,6 +28,7 @@
                 android:layout_height="50dp"
                 android:text="Calendario"
                 android:textAlignment="center"
+                android:fontFamily="@font/zenkakugothicnewmedium"
                 android:textColor="@color/white"
                 android:textSize="34sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -46,6 +47,7 @@
                 android:hint="Título"
                 android:inputType="textPersonName"
                 android:textAlignment="center"
+                android:fontFamily="@font/zenkakugothicnewmedium"
                 android:textColor="@color/white"
                 android:textColorHint="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -61,6 +63,7 @@
                 android:background="@drawable/edittext_states"
                 android:ems="10"
                 android:hint="Lugar"
+                android:fontFamily="@font/zenkakugothicnewmedium"
                 android:inputType="textPersonName"
                 android:textAlignment="center"
                 android:textColor="@color/white"
@@ -78,6 +81,7 @@
                 android:background="@drawable/edittext_states"
                 android:ems="10"
                 android:hint="Descripción"
+                android:fontFamily="@font/zenkakugothicnewmedium"
                 android:inputType="textPersonName"
                 android:textAlignment="center"
                 android:textColor="@color/white"
@@ -93,8 +97,11 @@
                 android:layout_width="150dp"
                 android:layout_height="40dp"
                 android:background="@drawable/edittext_states"
+                android:backgroundTint="@color/white"
                 android:text="Guardar"
-                android:textColor="@color/white"
+                android:textColor="@color/darkblue"
+                android:fontFamily="@font/zenkakugothicnewmedium"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.498"
@@ -123,6 +130,7 @@
                 android:text="¿Qué evento académico deseas agendar?"
                 android:textColor="@color/white"
                 android:textSize="18dp"
+                android:fontFamily="@font/zenkakugothicnewmedium"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -135,6 +143,7 @@
                 android:text="¿En dónde será el evento?"
                 android:textColor="@color/white"
                 android:textSize="18dp"
+                android:fontFamily="@font/zenkakugothicnewmedium"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -147,6 +156,7 @@
                 android:text="Agrégale alguna descripción a tu evento"
                 android:textColor="@color/white"
                 android:textSize="18dp"
+                android:fontFamily="@font/zenkakugothicnewmedium"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 

@@ -25,7 +25,7 @@
         android:layout_height="49dp"
         android:background="@drawable/buttom_rounded_corners_border"
         android:ems="10"
-        android:fontFamily="@font/averiaseriflibreregular"
+        android:fontFamily="@font/zenkakugothicnewmedium"
         android:gravity="center"
         android:minHeight="48dp"
         android:textColor="@color/white"
@@ -37,29 +37,35 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.524" />
 
-    <ImageView
+    <TextView
         android:id="@+id/imageView18"
         android:layout_width="74dp"
         android:layout_height="32dp"
+        android:text="Correo"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/zenkakugothicnewmedium"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.206"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.602"
-        app:srcCompat="@drawable/correo" />
+        app:layout_constraintVertical_bias="0.602" />
 
-    <ImageView
+    <TextView
         android:id="@+id/imageView16"
         android:layout_width="86dp"
         android:layout_height="33dp"
+        android:text="Nombre"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/zenkakugothicnewmedium"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.206"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.464"
-        app:srcCompat="@drawable/nombre" />
+        app:layout_constraintVertical_bias="0.464" />
 
     <TextView
         android:id="@+id/email_Text"
@@ -67,7 +73,7 @@
         android:layout_height="51dp"
         android:background="@drawable/buttom_rounded_corners_border"
         android:ems="10"
-        android:fontFamily="@font/averiaseriflibreregular"
+        android:fontFamily="@font/zenkakugothicnewmedium"
         android:gravity="center"
         android:minHeight="48dp"
         android:textColor="@color/white"
@@ -96,7 +102,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:fontFamily="@font/averiaseriflibreregular"
+        android:fontFamily="@font/zenkakugothicnewmedium"
         android:gravity="center"
         android:minHeight="48dp"
         android:textColor="@color/white"

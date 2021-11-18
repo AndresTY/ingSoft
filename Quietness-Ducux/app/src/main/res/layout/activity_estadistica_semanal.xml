@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backsignup"
+    android:background="@drawable/cieloo"
     tools:context=".sueno.EstadisticaSemanal">
 
     <TextView
@@ -13,11 +13,10 @@
         android:layout_height="246dp"
         android:layout_gravity="center_horizontal"
         android:background="@color/white"
-        android:fontFamily="@font/averiaseriflibrebold"
+        android:fontFamily="@font/zenkakugothicnewmedium"
         android:gravity="center_horizontal"
         android:textColor="@color/darkblue"
         android:textSize="30sp"
-        android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

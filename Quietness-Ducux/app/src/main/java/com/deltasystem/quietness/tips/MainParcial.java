@@ -30,7 +30,7 @@ public class MainParcial extends AppCompatActivity {
     }
 
     private void initialization_all() {
-        back = findViewById(R.id.button);
+        back = findViewById(R.id.back_button);
     }
 
     //Metodo Anterior 1

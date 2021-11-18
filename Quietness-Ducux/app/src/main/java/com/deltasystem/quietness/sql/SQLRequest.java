@@ -10,8 +10,11 @@ import java.sql.Statement;
 
 
 public class SQLRequest {
+	private String host = "sql10.freesqldatabase.com";
+	private String name = "sql10449029";
+	private String pass="biAiMlF4ue";
 	
-	String jdbcUrl = "jdbc:mysql://sql5.freesqldatabase.com:3306/sql5446905"; //DataBase DIR
+	private String jdbcUrl = "jdbc:mysql://"+host+":3306/"+name; //DataBase DIR
 	
 	public void insert_user(String a) { //Insert users
 		String usersql = String.format("INSERT INTO clients VALUES(%s)",a); //SQL sentence
@@ -20,7 +23,7 @@ public class SQLRequest {
 			Class.forName("com.mysql.jdbc.Driver");
 			StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
 			StrictMode.setThreadPolicy(policy);
-			connection = DriverManager.getConnection(jdbcUrl,"sql5446905","widbzrH47x"); //Connect to DB
+			connection = DriverManager.getConnection(jdbcUrl,name,pass); //Connect to DB
 			Statement statement = connection.createStatement();
 			int result = statement.executeUpdate(usersql);// Execute SQL sentence
 			if(result>0) {
@@ -52,7 +55,7 @@ public class SQLRequest {
 			Class.forName("com.mysql.jdbc.Driver");
 			StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
 			StrictMode.setThreadPolicy(policy);
-			connection = DriverManager.getConnection(jdbcUrl,"sql5446905","widbzrH47x"); //Connect to DB
+			connection = DriverManager.getConnection(jdbcUrl,name, pass); //Connect to DB
 			Statement statement = connection.createStatement();
 			int result = statement.executeUpdate(updateSql); // Execute SQL sentence
 			if(result>0) {
@@ -84,7 +87,7 @@ public class SQLRequest {
 			Class.forName("com.mysql.jdbc.Driver");
 			StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
 			StrictMode.setThreadPolicy(policy);
-			connection = DriverManager.getConnection(jdbcUrl,"sql5446905","widbzrH47x"); //Connect to DB
+			connection = DriverManager.getConnection(jdbcUrl,name, pass); //Connect to DB
 			Statement statement = connection.createStatement();
 			result = statement.executeQuery(sql);
 			while (result.next()) { //extracts the information from the database
@@ -112,9 +115,9 @@ public class SQLRequest {
 		return null;
 	}
 
-	public String get_hist(int point){
+	public String get_hist(){
 		String info=null;
-		String sql = String.format("SELECT * FROM hist_txt WHERE points< %d ORDER BY RAND() LIMIT 1",point); //SQL statement
+		String sql = String.format("SELECT * FROM hist_txt ORDER BY RAND() LIMIT 1"); //SQL statement
 		ResultSet result;
 		Connection connection = null;
 		try {
@@ -122,7 +125,7 @@ public class SQLRequest {
 			Class.forName("com.mysql.jdbc.Driver");
 			StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
 			StrictMode.setThreadPolicy(policy);
-			connection = DriverManager.getConnection(jdbcUrl,"sql5446905","widbzrH47x"); //Connect to DB
+			connection = DriverManager.getConnection(jdbcUrl,name,pass); //Connect to DB
 			Statement statement = connection.createStatement();
 			result = statement.executeQuery(sql);
 			while (result.next()) { //extracts the information from the database

@@ -43,7 +43,7 @@ public class GraficoHora extends AppCompatActivity {
         year.add("Vie");
         year.add("Sab");
         settings = getSharedPreferences(getString(R.string.app_name), Context.MODE_PRIVATE);
-        HoraDiaria hora = HoraDiaria.getHora(settings);
+        HoraDiaria hora = HoraDiaria.getHora(GraficoHora.this,settings);
 
 
         BarDataSet bardataset = new BarDataSet(hora.getHoras(), "Cantidad de horas");

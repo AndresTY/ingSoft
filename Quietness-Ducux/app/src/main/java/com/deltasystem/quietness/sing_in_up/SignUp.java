@@ -3,8 +3,12 @@ package com.deltasystem.quietness.sing_in_up;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -16,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.deltasystem.quietness.R;
+import com.deltasystem.quietness.login.Validador;
 import com.deltasystem.quietness.register.Register;
 import com.deltasystem.quietness.update.sendInfo;
 
@@ -31,12 +36,13 @@ public class SignUp extends AppCompatActivity {
     EditText _reEnterPasswordText = null;
     Button _signupButton = null;
     Button _back_login;
+    private SharedPreferences settings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
-
+        settings = getSharedPreferences(getString(R.string.app_name), Context.MODE_PRIVATE);
         opciones = (Spinner) findViewById(R.id.spinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.generos, android.R.layout.simple_spinner_item);
         opciones.setAdapter(adapter);
@@ -57,7 +63,16 @@ public class SignUp extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    signup(v);
+                    ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+                    NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+                    if (networkInfo != null && networkInfo.isConnected()) {
+                        // Si hay conexión a Internet en este momento
+                        signup(v);
+                    } else {
+                        // No hay conexión a Internet en este momento
+                        Toast.makeText(getApplicationContext(),"No hay internet en este momento",Toast.LENGTH_LONG).show();
+                        finish();
+                    }
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -118,7 +133,8 @@ public class SignUp extends AppCompatActivity {
 
     public boolean validate(String name,String user,String email,String password,String re_password) {
         boolean valid = true;
-
+        boolean entry = false;
+        Validador v = new Validador();
         if (name.isEmpty() || name.length() < 3) {
             _nameText.setError("Introduce al menos tres caracteres");
             valid = false;
@@ -153,7 +169,14 @@ public class SignUp extends AppCompatActivity {
         } else {
             _reEnterPasswordText.setError(null);
         }
-
+        if(valid){
+            entry = !v.existeUsuario(email);
+            if(entry){
+                _emailText.setError("Esta dirección de email ya existe");
+            }else{
+                _emailText.setError(null);
+            }
+        }
         return valid;
     }
 
@@ -163,10 +186,16 @@ public class SignUp extends AppCompatActivity {
         startActivity(intent);
     }
     public void onClickRegister(View view){
+        SharedPreferences.Editor edit = settings.edit();
+        edit.putString("Txt", "Now");
+        edit.putBoolean("Login",true);
         Intent intent = new Intent(SignUp.this, TermOfService.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         String email = _emailText.getText().toString();
         String password = _passwordText.getText().toString();
+        edit.putString("user", email);
+        edit.putString("passwd", password);
+        edit.commit();
         intent.putExtra("user",email);
         intent.putExtra("passwd",password);
         startActivity(intent);

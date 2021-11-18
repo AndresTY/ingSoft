@@ -16,6 +16,8 @@ import android.widget.Toast;
 import com.deltasystem.quietness.R;
 import com.deltasystem.quietness.drawer.IDrawer;
 import com.deltasystem.quietness.sueno.Main_Activity_Sueno;
+import com.deltasystem.quietness.toolbar_items.BugReport;
+import com.deltasystem.quietness.toolbar_items.Logout;
 import com.deltasystem.quietness.toolbar_items.Profile;
 import com.deltasystem.quietness.toolbar_items.settings;
 
@@ -62,7 +64,6 @@ public class CalendarView extends AppCompatActivity implements IDrawer {
         String user = ble.getString("user");
         String passwd = ble.getString("passwd");
         Intent intent = new Intent(CalendarView.this, Menu.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         intent.putExtra("user",ble.getString("user"));
         intent.putExtra("passwd",ble.getString("passwd"));
         startActivity(intent);
@@ -115,6 +116,9 @@ public class CalendarView extends AppCompatActivity implements IDrawer {
         //Cerrar drawer
         closeDrawer(drawerLayout);
     }
+    public void ClickLogout(View view){
+        redireccionar(this, Logout.class);
+    }
 
     public void closeDrawer(DrawerLayout drawerLayout) {
         //Cerrar Drawer Layout
@@ -144,14 +148,17 @@ public class CalendarView extends AppCompatActivity implements IDrawer {
         redireccionar(this, settings.class);
     }
 
+    @Override
+    public void ClickError(View view) {
+        redireccionar(this, BugReport.class);
+    }
+
     public void ClickSueno(View view){
         redireccionar(this, Main_Activity_Sueno.class);
     }
 
     public void redireccionar(Activity activity, Class aClass) {
         ble = this.getIntent().getExtras();
-        String user = ble.getString("user");
-        String passwd = ble.getString("passwd");
         Intent intent = new Intent(activity, aClass);
         intent.putExtra("user",ble.getString("user"));
         intent.putExtra("passwd",ble.getString("passwd"));

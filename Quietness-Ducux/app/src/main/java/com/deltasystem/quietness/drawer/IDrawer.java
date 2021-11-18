@@ -28,5 +28,9 @@ public interface IDrawer {
 
     public void ClickSettings(View view);
 
+    public void ClickError(View view);
+
+    public void ClickLogout(View view);
+
     public void redireccionar(Activity activity, Class aClass);
 }

@@ -66,6 +66,7 @@ public class Stories extends AppCompatActivity {
     }
 
     private void get_txt(){
+        /*
         ble = this.getIntent().getExtras();
         int aux=0;
         HashMap<String, Integer> point=new HashMap<String, Integer>() {{
@@ -89,16 +90,16 @@ public class Stories extends AppCompatActivity {
         }};;
         String user = ble.getString("user");
         String passwd = ble.getString("passwd");
-        SQLRequest sql = new SQLRequest();
+
         String inf[] = sql.get_info("clients",user,passwd);
 
         String quiz[] = inf[4].split(";");
 
         for(String a: quiz){
             aux+= point.get(a);
-        }
-
-        String hist = sql.get_hist(aux);
+        }*/
+        SQLRequest sql = new SQLRequest();
+        String hist = sql.get_hist();
         txt.setText(hist);
     }
 

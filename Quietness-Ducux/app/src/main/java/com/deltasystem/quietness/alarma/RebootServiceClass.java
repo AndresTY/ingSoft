@@ -35,7 +35,7 @@ public class RebootServiceClass extends IntentService {
         if (intentType == null) return;
         if (intentType.equals("RebootReceiver")) {
             SharedPreferences settings = getSharedPreferences(getString(R.string.app_name), Context.MODE_PRIVATE);
-            Utils.setAlarm(settings.getInt("alarmID", 0), settings.getLong("alarmTime", 0), this);
+            Utils.setAlarm(settings.getInt("alarmID", 0),settings.getString("sound",""), settings.getLong("alarmTime", 0), this);
         }
     }
 }

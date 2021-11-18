@@ -31,33 +31,55 @@
         app:layout_constraintVertical_bias="0.05"
         app:srcCompat="@drawable/logoi_2" />
 
-    <ImageView
+    <TextView
         android:id="@+id/inicio_sesion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/zenkakugothicnewmedium"
+        android:text="Inicio de sesión"
+        android:textColor="@color/white"
+        android:textSize="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.211"
-        app:srcCompat="@drawable/iniciosesion" />
+        app:layout_constraintVertical_bias="0.211" />
 
     <Button
         android:id="@+id/button_login"
-        android:layout_width="139dp"
-        android:layout_height="36dp"
-        android:background="@drawable/login_btn"
+        android:layout_width="196dp"
+        android:layout_height="45dp"
+
         android:backgroundTint="@color/white"
-        android:fontFamily="@font/averiaseriflibrebold"
-        android:text="entrar"
+        android:fontFamily="@font/zenkakugothicnewmedium"
+        android:text="Acceder con correo"
+        android:textAllCaps="false"
         android:textColor="@color/darkblue"
+        android:textSize="15dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.601" />
+        app:layout_constraintVertical_bias="0.58000004" />
+
+    <com.shobhitpuri.custombuttons.GoogleSignInButton
+        android:id="@+id/button_login_google"
+        android:layout_width="194dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="456dp"
+        android:layout_marginEnd="109dp"
+        android:background="@drawable/login_btn"
+        android:fontFamily="@font/zenkakugothicnewmedium"
+        android:paddingLeft="34dp"
+        android:text="Acceder con Google"
+        app:isDarkTheme="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/password_login"
@@ -65,12 +87,12 @@
         android:layout_height="51dp"
         android:background="@drawable/edittext_states"
         android:ems="10"
-        android:fontFamily="@font/averiaseriflibrebold"
+        android:fontFamily="@font/zenkakugothicnewmedium"
         android:hint="******"
         android:inputType="textPassword"
         android:textAlignment="center"
         android:textColor="@color/white"
-        android:textColorHint="#f5f5dc"
+        android:textColorHint="#63FFFFFF"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -79,17 +101,20 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.491" />
 
-    <ImageView
+    <TextView
         android:id="@+id/login_correo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/zenkakugothicnewmedium"
+        android:text="Correo"
+        android:textColor="@color/white"
+        android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.31"
-        app:srcCompat="@drawable/correo" />
+        app:layout_constraintVertical_bias="0.31" />
 
     <EditText
         android:id="@+id/correo_login"
@@ -97,13 +122,13 @@
         android:layout_height="56dp"
         android:background="@drawable/edittext_states"
         android:ems="10"
-        android:fontFamily="@font/averiaseriflibrebold"
-        android:hint="example@correo.com"
+        android:fontFamily="@font/zenkakugothicnewmedium"
+        android:hint="ejemplo@correo.com"
         android:inputType="textEmailAddress"
         android:textAlignment="center"
         android:textColor="@color/white"
-        android:textColorHint="#f5f5dc"
-        android:textSize="14sp"
+        android:textColorHint="#63FFFFFF"
+        android:textSize="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.45"
@@ -111,17 +136,20 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.36" />
 
-    <ImageView
+    <TextView
         android:id="@+id/imageView15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/zenkakugothicnewmedium"
+        android:text="Contraseña"
+        android:textColor="@color/white"
+        android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.4375"
-        app:srcCompat="@drawable/password" />
+        app:layout_constraintVertical_bias="0.4375" />
 
     <Button
         android:id="@+id/singup_btn_go"
@@ -147,6 +175,7 @@
         android:layout_marginTop="644dp"
         android:layout_marginEnd="166dp"
         android:layout_marginBottom="63dp"
+        android:fontFamily="@font/zenkakugothicnewmedium"
         android:text="Regístrate"
         android:textColor="@color/white"
         android:textSize="18dp"

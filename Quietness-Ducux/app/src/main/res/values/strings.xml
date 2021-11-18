@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Quietness</string>
+    <string name="default_web_client_id">952596588562-kmpn07dd9m1cv5fufku1cjvl5bo96ff3.apps.googleusercontent.com</string>
     <string name="inicia_sesion"><u>Inicia sesión</u></string>
     <string name="title_activity_menu">menu</string>
     <!-- Strings used for fragments for navigation -->
@@ -137,5 +138,37 @@
     <string name="pro3">3. Reuniones efectivas por encima de todo.</string>
     <string name="pro4">4. Ten un plan B ante cualquier imprevisto.</string>
     <string name="menu">Menu</string>
+
+    <string name ="about_us1">
+        Retoma la tranquilidad que necesitas, al alcance de tu mano.
+        Alivia las cargas producidas por la ansiedad de forma dinámica y efectiva.
+        Preservar una buena salud mental es importante, nosotros te enseñamos cómo hacerlo. </string>
+
+    <string name ="about_us2">
+        “Es  difícil encontrar la felicidad dentro de  uno mismo, pero es imposible  encontrarla en ningún otro  lugar"</string>
+
+
+    <string name ="about_usref">
+        -A Schopenhauer </string>
+
+    <string name ="about_us3">
+        Quietness es una aplicación móvil que ayuda a controlar los altos niveles de ansiedad
+        en estudiantes universitarios de primero a cuarto semestre en la ciudad de Bogotá,
+        debido a que estos reducen la eficiencia en el aprendizaje, disminuyendo la atención, la concentración y la retención de información,
+        con el consecuente deterioro en el rendimiento académico.  </string>
+
+    <string name ="about_us4">
+        Esta aplicación móvil le permita lidiar con los síntomas y episodios de ansiedad.
+        Será capaz de elaborar un monólogo ambientado con música que relacione con tranquilidad,
+        para que, de esta manera, cree una zona de confort de experiencia personalizada,
+        que se encargará de recordarle lo que estableció previamente (de manera creativa e independiente)
+        como situaciones, ambientes, recuerdos y personas que benefician su vida, brindando comodidad y calma a su mente.
+        Por otro lado, la aplicación implementará más herramientas de control de ansiedad,
+        tales como control de horas de sueño, para llevar un registro cronológico de sus hábitos de descanso,
+        calendario de ansiedad, que permitirá al usuario establecer aquellas actividades que produzcan un
+        desequilibrio emocional prematuro y de este modo llevar procedimientos de control de ansiedad con anticipación,
+        así como el entrenamiento de habilidades de estudio donde encontrará consejos, experiencias,
+        métodos de estudio o sencillamente comportamientos sanos a la hora de lidiar con la ansiedad mientras estudia. </string>
+
 
 </resources>

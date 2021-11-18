@@ -9,6 +9,10 @@ import com.deltasystem.quietness.sing_in_up.Login;
 import com.deltasystem.quietness.sing_in_up.SignUp;
 import com.deltasystem.quietness.sing_in_up.TermOfService;
 import com.deltasystem.quietness.update.sendInfo;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 
 import android.app.Activity;
 import android.content.Context;
@@ -31,6 +35,7 @@ import java.util.Calendar;
 public class Logout extends AppCompatActivity {
 
     private SharedPreferences settings;
+    private GoogleSignInClient mGoogleSignInClient;
     Bundle ble;
 
     @Override
@@ -81,11 +86,19 @@ public class Logout extends AppCompatActivity {
     }
 
     private void devolver(){
+        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+        if(account!=null){
+            GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                    .requestIdToken(getString(R.string.default_web_client_id))
+                    .requestEmail()
+                    .build();
+            mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+            mGoogleSignInClient.signOut();
+
+        }
         settings = getSharedPreferences(getString(R.string.app_name), Context.MODE_PRIVATE);
         SharedPreferences.Editor edit = settings.edit();
         ble = this.getIntent().getExtras();
-        String user = ble.getString("user");
-        String passwd = ble.getString("passwd");
         Intent intent = new Intent(Logout.this, Login.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         intent.putExtra("user",ble.getString("user"));
